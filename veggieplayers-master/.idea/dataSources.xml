@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="MySQL - veggiebirds_users@localhost" uuid="e45c73d3-3924-45ae-b5a9-5fc6e3e2a1bc">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/veggiebirds_users</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="EST" />
+      </driver-properties>
+    </data-source>
+  </component>
+</project>

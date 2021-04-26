@@ -1,0 +1,271 @@
+.create_post{
+    position: absolute;
+    right: 225px;
+    bottom:5px;
+    margin-bottom: 5px;
+    width: 50px;
+    background-color:rgba(30,144,255, 0.5);
+}
+
+/****************/
+/*table with all my posts*/
+/****************/
+.mypostform{
+    padding: 50px 100px 70px;
+    text-align: center;
+    /*background-color: #c4fdc4;*/
+}
+
+.my_post_table {
+    width: 100%;
+}
+
+.my_post_table tr{
+    /*width: 300px;*/
+    height: 70px;
+    /*background-color: #FFFFFF;*/
+    background-color: rgba(255, 255, 255, 0.7);
+    /*border: 1px solid #F0F3F4;*/
+}
+
+.table_cell{
+    padding: 5px 20px 5px;
+}
+
+.title_container{
+    font-size:1.33em;
+    width: 80px;
+    height:30px;
+    text-align: left;
+    color: #008B8B;
+    display:flex;
+    align-items: center;
+}
+
+.tool_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.like_span{
+    font-size: 1.33em;
+    width: 80px;
+    height: 30px;
+    display:flex;
+    /*justify-content: space-between;*//*align horizontally*/
+    align-items: center;/*align vertically*/
+}
+
+.like_span i{
+    margin: 0 5px 0
+}
+
+.like_span span{
+    margin: 0 5px 0;
+    width:40px;
+}
+
+.tool_span{
+    font-size: 1.33em;
+    width: 40px;
+    height: 30px;
+    display:flex;
+    justify-content: center;/*align horizontally*/
+    align-items: center;/*align vertically*/
+}
+
+.my_post_table td span:first-child{
+    float:left;
+}
+
+.my_post_table td span:last-child{
+    float: right;
+}
+
+.fa-heart{
+    color:#ffa7b4;
+}
+
+.self_like_container span{
+    color:#040b04;
+}
+
+.fa-edit{
+    color:#808B96;
+}
+
+.fa-trash-alt{
+    color:#808B96;
+}
+
+.post_btn_cell{
+    width:100%;
+    height:100%;
+}
+
+.post-btn{
+    width:100%;
+    height:100%;
+    text-align: center;
+    font-size: 40px;
+    /*
+    color: #008B8B;
+    background-color: #FFFFFF;
+    */
+    color: rgba(0, 139, 139, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.post-btn:hover{
+    background-color: #d3fdd3;
+}
+
+.pagination_btn_container{
+    /*margin: auto;*/
+    background-color: #FFFFFF;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+.pagination_btn{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    /*display: inline-flex;*/
+    color: #008B8B;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.pagination_btn.active,
+.pagination_btn:hover{
+    color: #FFFFFF;
+    background-color: #00FA9A;
+}
+
+/****************/
+/*initial post*/
+/****************/
+.init-post-grid{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:400px;
+}
+
+.init-post-container{
+    width:100%;
+}
+
+.init-post-container h1{
+    text-align: center;
+    font-size: 40px;
+    color:#f3f3f3;
+}
+
+.init-post-btn{
+    text-align:center;
+    font-size:40px;
+    color:#f3f3f3;
+    background-color : rgba(20, 82, 82, 0.3);
+    width:200px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+.init-post-btn:hover{
+    background-color: #f3f3f3; /* Green */
+    color: #4CAF50;
+    border-radius: 4px;
+}
+
+.post-form{
+    /*width:100%;
+    position: relative;
+    display:flex;
+    text-align: center;
+
+     */
+    /*align-items: center;*/
+}
+
+.post-form form{
+    width: 80%;
+    margin:0 auto;
+    text-align: right;
+}
+
+.post-form button{
+    font-size:25px;
+    margin-bottom: 5px;
+    height:40px;
+    width: 120px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+    background-color: #FFFFFF;
+    color: rgba(0, 139, 139, 0.9);
+    /*background-color: #66131c;*/
+}
+
+.post-form button:hover{
+    background-color:rgba(30,144,255, 0.5);
+    color:rgba(255,255,255, 0.9);
+    border-radius: 4px;
+}
+
+.post-form h1{
+    text-align: center;
+    color:white;
+    font-size:30px;
+    align-content: center;
+}
+
+.field-wrap label{
+    display: inline-block;
+    color:white;
+    font-size:25px;
+    width:30%;
+    text-align: right;
+    vertical-align: top;
+}
+
+.post-form span{
+    color:white;
+    font-size:25px;
+}
+
+.field-wrap{
+    padding: 10px 0;
+}
+
+.field-wrap input[type=text]{
+    height: 40px;
+    width: 60%;
+    background-color : rgba(48, 151, 151, 0.5);
+    color:white;
+    font-size: 22px;
+    padding:0.4em;
+}
+
+.field-wrap textarea{
+    height: 500px;
+    width: 60%;
+    background-color : rgba(48, 151, 151, 0.5);
+    color:white;
+    font-size: 22px;
+    padding:0.4em;
+}
+
+/*
+.title-wrap {
+    border:1px solid yellow;
+}
+
+.content-wrap {
+    border:1px solid purple;
+}
+*/

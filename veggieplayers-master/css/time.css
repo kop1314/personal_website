@@ -1,0 +1,45 @@
+#Time h3 {
+    color:white;
+    font-size:25px;
+    width: 50%;
+    margin-right:400px;
+    margin-left:350px;
+}
+#Time button {
+    font-size:25px;
+    background-color: rgba(218,165,32, 0.5);
+    width:25%;
+    margin-right:400px;
+    margin-left:180px;
+    border:none;
+}
+.time-form {
+     margin: auto;
+     width: 50%;
+    border: 3px;
+    padding: 10px;
+    border-color:#041414;
+}
+.time-label{
+    margin: auto;
+    width:50%;
+    color:white;
+}
+
+/*FIND TEAM*/
+#Teammate h3 {
+    color:white;
+    font-size:25px;
+    width: 50%;
+    margin-right:400px;
+    margin-left:350px;
+}
+
+#Teammate button{
+    font-size:25px;
+    background-color: rgba(218,165,32, 0.5);
+    width:25%;
+    margin-right:400px;
+    margin-left:350px;
+    border:none;
+}
