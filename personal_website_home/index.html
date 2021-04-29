@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/skills.css"/>
     <link rel="stylesheet" type="text/css" href="css/projects.css"/>
+
 
     <!------using fontAwesome------->
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
@@ -37,7 +39,8 @@
                 <ul>
                     <li><a href="#text-container-1" class="active">Home</a></li>
                     <li><a href="#about-container-1">About</a></li>
-                    <li><a href="#projects-container-1">Project</a></li>
+                    <li><a href="#skill-container-1">Skills</a></li>
+                    <li><a href="#projects-container-1">Projects</a></li>
                     <li><a href="#contact-container-1">Contact</a></li>
                     <!----<li><a href="#"></a></li>---->
                 </ul>
@@ -45,7 +48,7 @@
                 <div class="toggle"><</div>
             </nav>
         <!--------------test---------------------->
-        <div class="text-container" id ="text-container-1">
+        <div class="section text-container" id ="text-container-1">
             <div class="text-block">
                 <p>Hello,</p>
                 <p>I am Felix</p>
@@ -63,7 +66,7 @@
         --->
     </section>
 
-    <div class="about-container" id="about-container-1">
+    <div class="section about-container" id="about-container-1">
         <!--------------img--------------------->
         <img src="images/about_img.png">
         <!--------------about-text----------------->
@@ -79,7 +82,55 @@
         </div>
     </div>
 
-    <div class="projects-container" id="projects-container-1">
+    <div class="section skill-container" id="skill-container-1">
+        <div class="skill-container-title">
+            <p>Skills</p>
+        </div>
+        <div class="skill-list">
+            <div class="skill-list-item">
+                <p>Programming Languages</p>
+                <ul>
+                    <li>Java</li>
+                    <li>C</li>
+                    <li>Python</li>
+                    <li>Go</li>
+                    <li>R</li>
+                    <li>HTML</li>
+                    <li>JavaScript</li>
+                    <li>Php</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            <div class="skill-list-item">
+                <p>Software</p>
+                <ul>
+                    <li>Git</li>
+                    <li>Docker</li>
+                    <li>Android Studio</li>
+                    <li>NetBeans</li>
+                    <li>IntelliJ</li>
+                    <li>GoLand</li>
+                    <li>RStudio</li>
+                    <li>PhpStorm</li>
+                    <li>MySQL</li>
+                    <li>Apache</li>
+                    <li>Hadoop</li>
+                    <li>Apache Subversion(SVN)</li>
+                </ul>
+            </div>
+            <div class="skill-list-item">
+                <p>Frameworks/Platform</p>
+                <ul>
+                    <li>JSF</li>
+                    <li>Junit</li>
+                    <li>JQuery</li>
+                    <li>Firebase</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section projects-container" id="projects-container-1">
         <div class="projects-text">
             <p>Projects</p>
         </div>
@@ -153,7 +204,7 @@
         </div>
     </div>
     <!------------contact --------------------->
-    <div class="contact-container" id="contact-container-1">
+    <div class="section contact-container" id="contact-container-1">
         <p>Contact</p>
         <div class="contact-text">
             If you want to work for any projects together or want to have a chat.
@@ -179,7 +230,7 @@
 
                 <div class="field-wrap">
                     <label>
-                        Meesage<span class="req">*</span>
+                        Message<span class="req">*</span>
                     </label>
                     <textarea required autocomplete="off" name="message" placeholder="your message"></textarea>
                 </div>

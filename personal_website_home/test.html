@@ -2,54 +2,253 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" conten="width=device-width, initial-scale-1.0">
     <title>logo</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
 </head>
 <style>
-    .logo_container{
-        position:fixed;
-        width:100px;
-        height:50px;
-        overflow: hidden;
+    .projects-container{
+        width:100%;
+        height:600px;
         border: 1px solid red;
+    }
 
+    .projects-text{
         display: flex;
         justify-content: center;
-        align-items: center;
-
+        align-content: center;
     }
 
-    video{
+    .projects-text p{
+        color: #a2f3ee;
+        text-align: center;
+        font-size:30px;
+        font-family: sans-serif;
+        font-weight: bold;
+        border-bottom: 2px solid #a2f3ee;
+    }
+    .slider-container{
+        max-width: 80%;
+        height: 500px;
+        margin: 0 auto;
+        border: 1px solid blue;
+    }
+
+    .card-slider .slick-slide{
+        margin: 15px;
+    }
+
+    .card-content{
+        width: 100%;
+        height: 400px;
+        perspective: 600px;
+    }
+
+    .card-inner{
+        position:relative;
+        width:100%;
+        height:100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+
+
+    .card-content:hover .card-inner{
+        transform: rotateY(180deg);
+    }
+
+    .card-font, .card-back{
         position: absolute;
-        top:0;
-        left:0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
     }
 
-    a{
-        display:block;
-        width:60px;
-        line-height: 50px;
-        background: white;
-        color:black;
-        text-align: center;
-        font-weight: 900;
-        font-size: 40px;
-        position:absolute;
-        bottom:0;
-        text-decoration: none;
-        mix-blend-mode: screen;
+    .card-font{
+        background-color: red;
+        color: white;
     }
+
+    .card-back{
+        background-color: blue;
+        color: white;
+        transform: rotateY(180deg);
+    }
+
+    .slick-dots li.slick-active button:before{
+        color:#a2f3ee;
+    }
+
+    .slick-dots li button:before{
+        font-size: 20px;
+        /*color: #8c8c8c;*/
+        color:#a2f3ee;
+    }
+
+
+    .card-slider .slick-next:before, .card-slider .slick-prev:before{
+        font-family: 'fontAwesome';
+        font-size: 30px;
+        color: #149991;
+    }
+
+    .card-slider .slick-prev:before{
+        content: '\f053';
+    }
+
+    .card-slider .slick-next:before{
+        content: '\f054';
+    }
+
+    .slick-next:before,
+    .slick-prev:before{
+        color:purple;
+        font-size:24px;
+    }
+
+    .card-slider .slick-prev, .card-slider .slick-next{
+        width:auto;
+        height: auto;
+    }
+
+
 </style>
 <body>
-    <div class="logo_container">
-        <video class="video" muted autoplay loop>
-            <source src="video/in_fire.mp4" type="video/mp4">
-        </video>
-        <a href="#" class="logo">
-            Felix
-        </a>
+<div class="projects-container" id="projects-container-1">
+    <div class="projects-text">
+        <p>Project</p>
     </div>
+    <div class="slider-container">
+        <div class="card-slider">
+            <div class="card-content" id="card-content-1">
+                <div class="card-inner">
+                    <div class="card-font"></div>
+                    <div class="card-back">
+                        <h3>1</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-content" id="card-content-2">
+                <div class="card-inner">
+                    <div class="card-font"></div>
+                    <div class="card-back">
+                        <h3>2</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-content" id="card-content-3">
+                <div class="card-inner">
+                    <div class="card-font"></div>
+                    <div class="card-back">
+                        <h3>3</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-content" id="card-content-4">
+                <div class="card-inner">
+                    <div class="card-font"></div>
+                    <div class="card-back">
+                        <h3>4</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-content" id="card-content-5">
+                <div class="card-inner">
+                    <div class="card-font"></div>
+                    <div class="card-back">
+                        <h3>5</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-content" id="card-content-6">
+                <div class="card-inner">
+                    <div class="card-font"></div>
+                    <div class="card-back">
+                        <h3>6</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-content" id="card-content-7">
+                <div class="card-inner">
+                    <div class="card-font"></div>
+                    <div class="card-back">
+                        <h3>7</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!---
+        <div class="arrow-prev">
+            <span><i class="fas fa-chevron-left"></i></span>
+        </div>
+        <div class="arrow-next">
+            <span><i class="fas fa-chevron-right"></i></span>
+        </div>
+        --->
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function(){
+
+        $('.card-slider').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 1000,
+            infinite: false,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings:{
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings:{
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrow:false
+                    }
+                }
+            ]
+        });
+
+
+        $('.card-slider').on('breakpoint', function(event, slick, breakpoint) {
+            console.log('breakpoint ' + breakpoint);
+        });
+
+    });
+
+</script>
+
 </body>
 </html>

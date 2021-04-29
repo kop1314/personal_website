@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb0292f6-bae9-4c14-bfb6-fc04874166f3" name="Default Changelist" comment="" />
+    <list default="true" id="eb0292f6-bae9-4c14-bfb6-fc04874166f3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../personal_website_home/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal_website_home/css/projects.css" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/css/projects.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal_website_home/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal_website_home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal_website_home/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal_website_home/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -59,21 +66,26 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP xampp" />
   <component name="ProjectId" id="1q7spU0YRxruaEDupCtuWl9kY8x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -97,6 +109,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -114,11 +127,14 @@
       <workItem from="1619048735166" duration="2197000" />
       <workItem from="1619128562770" duration="294000" />
       <workItem from="1619136137702" duration="8374000" />
+      <workItem from="1619469919310" duration="3460000" />
+      <workItem from="1619481030221" duration="709000" />
+      <workItem from="1619481969501" duration="1575000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="399" y="91" key="#CLI_Interpreters" timestamp="1616447733652">

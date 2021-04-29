@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+
+</head>
+<style>
+  .left{
+    float: left;
+    width: 30%;
+    height: 200px;
+    border: 1px solid black;
+  }
+
+  .internal{
+    width: 33.3%;
+    height: 100%;
+    border: 1px solid black;
+    display: inline-block;
+  }
+
+  .center{
+    display: flex;
+    align-content: center;
+    /*float: left;*/
+    width: 38.9%;
+    height: 200px;
+    border: 1px solid black;
+    /*margin: 1px;*/
+    overflow: hidden;
+    /*will change this to hidden later to deny scolling to user*/
+    /*white-space: nowrap;*/
+  }
+
+  .right{
+    float: right;
+    width: 30%;
+    height: 200px;
+    border: 1px solid black;
+  }
+
+
+</style>
+<body>
+
+<div class="left">
+  left div
+  <button id="left-button">
+    swipe left
+  </button>
+</div>
+<div class="center" id="content">
+  <div class=internal>
+    div 1
+  </div>
+  <div class=internal>
+    div 2
+  </div>
+  <div class=internal>
+    div 3
+  </div>
+  <div class=internal>
+    div 4
+  </div>
+  <div class=internal>
+    div 5
+  </div>
+  <div class=internal>
+    div 6
+  </div>
+  <div class=internal>
+    div 7
+  </div>
+  <div class=internal>
+    div 8
+  </div>
+</div>
+<div class="right">
+  <button id="right-button">
+    swipe right
+  </button>
+  right div
+</div>
+
+
+
+<script data-require="jquery" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+
+  $('#right-button').click(function() {
+    event.preventDefault();
+    var slideWidth = $(".internal").width();
+    $('#content').animate({
+      scrollLeft: "+="+slideWidth
+    }, "slow");
+  });
+
+  $('#left-button').click(function() {
+    event.preventDefault();
+    var slideWidth = $(".internal").width();
+    $('#content').animate({
+      scrollLeft: "-="+slideWidth
+    }, "slow");
+  });
+</script>
+
+</body>
+
+</html>

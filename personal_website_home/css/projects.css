@@ -1,7 +1,8 @@
 .projects-container{
     width:100%;
-    height:600px;
+    height:700px;
     background-color: #FFFFFF;
+    box-shadow: 0 0 10px #a2f3ee;
 }
 
 .projects-text{
@@ -11,12 +12,12 @@
 }
 
 .projects-text p{
-    color: #a2f3ee;
+    color: #80fff7;
     text-align: center;
     font-size:30px;
     font-family: sans-serif;
     font-weight: bold;
-    border-bottom: 2px solid #a2f3ee;
+    border-bottom: 2px solid #80fff7;
 }
 .slider-container{
     max-width: 80%;
@@ -58,12 +59,12 @@
 }
 
 .card-font{
-    background-color: red;
+    background-color: #a2f3ee;
     color: white;
 }
 
 .card-back{
-    background-color: blue;
+    background-color: #149991;
     color: white;
     transform: rotateY(180deg);
 }

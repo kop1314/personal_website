@@ -1,0 +1,91 @@
+.skill-container{
+    width:100%;
+    height:700px;
+    background-color: transparent;
+}
+
+.skill-container-title{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.skill-container-title p{
+    color: #149991;
+    text-align: center;
+    font-size:30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-bottom: 2px solid #149991;
+}
+
+.skill-list{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.skill-list-item{
+    width:30%;
+}
+
+.skill-list-item p{
+    color: #2b2b2b;
+    text-align: center;
+    font-size:22px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.skill-list-item .start-title{
+    animation: horizontalSlide 1s ease-in-out forwards;
+    transform-origin: top center;
+}
+
+@keyframes horizontalSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    80% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.skill-list-item ul{
+    font-size: 20px;
+    list-style: none;
+}
+
+.skill-list-item .start-list{
+    animation: dropMenu 1s ease-in-out forwards;
+    transform-origin: top center;
+}
+
+@keyframes dropMenu {
+    0% {
+        transform: rotateX(-90deg)
+    }
+    70% {
+        transform: rotateX(20deg)
+    }
+    100% {
+        transform: rotateX(0deg)
+    }
+}
+
+
+.skill-list-item li:before{
+    content: "\2014";
+    color: #149991;
+    display: inline-block;
+    width: 1em;
+    margin-left: -20px;
+    margin-right: 10px;
+    /*list-style-position: inside;*/
+}
