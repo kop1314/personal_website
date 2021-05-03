@@ -3,13 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="eb0292f6-bae9-4c14-bfb6-fc04874166f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../personal_website_home/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../personal_website_home/css/projects.css" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/css/projects.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../personal_website_home/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../personal_website_home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../personal_website_home/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../personal_website_home/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e45c73d3-3924-45ae-b5a9-5fc6e3e2a1bc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e45c73d3-3924-45ae-b5a9-5fc6e3e2a1bc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deletepost.php" beforeDir="false" afterPath="$PROJECT_DIR$/deletepost.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discussion.php" beforeDir="false" afterPath="$PROJECT_DIR$/discussion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/discussion.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/discussion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postJSON.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,68 +134,19 @@
       <workItem from="1619469919310" duration="3460000" />
       <workItem from="1619481030221" duration="709000" />
       <workItem from="1619481969501" duration="1575000" />
+      <workItem from="1619816723522" duration="4424000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="399" y="91" key="#CLI_Interpreters" timestamp="1616447733652">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="399" y="91" key="#CLI_Interpreters/0.23.1440.813@0.23.1440.813" timestamp="1616447733652" />
-    <state x="486" y="23" width="649" height="813" key="#PHP" timestamp="1616447736478">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="486" y="23" width="649" height="813" key="#PHP/0.23.1440.813@0.23.1440.813" timestamp="1616447736478" />
-    <state x="577" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616448679690">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="577" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.813@0.23.1440.813" timestamp="1616448679690" />
-    <state x="742" y="214" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1619037667682">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="742" y="214" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.813@0.23.1440.813" timestamp="1619037667682" />
-    <state width="1011" height="244" key="GridCell.Tab.0.bottom" timestamp="1618960543664">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state width="1011" height="244" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1618960543664" />
-    <state width="1011" height="244" key="GridCell.Tab.0.center" timestamp="1618960543663">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state width="1011" height="244" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1618960543663" />
-    <state width="1011" height="244" key="GridCell.Tab.0.left" timestamp="1618960543660">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state width="1011" height="244" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1618960543660" />
-    <state width="1011" height="244" key="GridCell.Tab.0.right" timestamp="1618960543664">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state width="1011" height="244" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1618960543664" />
-    <state x="979" y="352" key="NewPhpFileDialog" timestamp="1618933782868">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="979" y="352" key="NewPhpFileDialog/0.23.1440.813@0.23.1440.813" timestamp="1618933782868" />
-    <state x="458" y="94" key="SettingsEditor" timestamp="1618531702975">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="458" y="94" key="SettingsEditor/0.23.1440.813@0.23.1440.813" timestamp="1618531702975" />
-    <state x="592" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1619048744675">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="592" y="246" key="com.intellij.ide.util.TipDialog/0.23.1440.813@0.23.1440.813" timestamp="1619048744675" />
-    <state x="535" y="204" key="run.anything.popup" timestamp="1618518237766">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="535" y="204" key="run.anything.popup/0.23.1440.813@0.23.1440.813" timestamp="1618518237766" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/discussion.js</url>
-          <line>263</line>
+          <line>265</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

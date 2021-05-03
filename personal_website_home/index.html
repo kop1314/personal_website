@@ -7,9 +7,9 @@
     <title>Personal Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" type="text/css" href="css/skills.css"/>
     <link rel="stylesheet" type="text/css" href="css/projects.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 
     <!------using fontAwesome------->
@@ -28,6 +28,7 @@
         <!----------navigation-------------------->
             <nav>
                 <!----logo------>
+
                 <div class="logo_container">
                     <video class="video" muted autoplay loop>
                         <source src="video/dark_lightning_thunder.mp4" type="video/mp4">
@@ -35,6 +36,7 @@
                     </video>
                     <a href="#" class="logo">Felix</a>
                 </div>
+
                 <!--menu-->
                 <ul>
                     <li><a href="#text-container-1" class="active">Home</a></li>
@@ -45,7 +47,7 @@
                     <!----<li><a href="#"></a></li>---->
                 </ul>
                 <!-----------bars------------------->
-                <div class="toggle"><</div>
+                <div class="toggle"></div>
             </nav>
         <!--------------test---------------------->
         <div class="section text-container" id ="text-container-1">
@@ -67,19 +69,25 @@
     </section>
 
     <div class="section about-container" id="about-container-1">
-        <!--------------img--------------------->
-        <img src="images/about_img.png">
-        <!--------------about-text----------------->
-        <div class="about-text">
-            <p>About Me</p>
-            <p>Developer & Designer</p>
-            <p>Hello, My name is Felix Yang. I am a Developer and also a a
-            Designer. If you have any projects or if you want to make a
-            software for your business contact me.
-                I will make your project as soon as possible.</p>
-            <button>Hire Me</button>
-            <button>Resume</button>
+        <div class="style-block color"></div>
+        <div class="about-box">
+            <!--------------img--------------------->
+            <img src="images/about_img.png">
+            <!--------------about-text----------------->
+            <div class="about-text">
+                <p>About Me</p>
+                <p>Engineer & Designer</p>
+                <p>Hello, My name is Felix Yang. I enjoy designing and implementing
+                    awesome program back in 2015 when I took my first CS course in high school.
+                    Web development, Distributed System, and Ai/Machine Learning
+                    are the fields I am interested in. I am also a passionate learner
+                    who is proficient in a variety of programming languages.
+                    Among of them, Python is my favorite programming language.</p>
+                <a href="#contact-container-1"><button>Hire Me</button></a>
+                <a href="Felix_Yang_Resume.pdf" download=""><button>Resume</button></a>
+            </div>
         </div>
+        <div class="style-block blank"></div>
     </div>
 
     <div class="section skill-container" id="skill-container-1">
@@ -268,8 +276,10 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $('.toggle').click(function(){
-                $('.toggle').toggleClass('active')
-                $('nav').toggleClass('active')
+                $('.toggle').toggleClass('active');
+                $('nav').toggleClass('active');
+                $('section').toggleClass('active');
+                $('.section').toggleClass('active');
             })
         })
     </script>

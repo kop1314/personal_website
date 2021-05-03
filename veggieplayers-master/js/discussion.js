@@ -3,7 +3,7 @@ $(document).ready(function() {
     $('.post-form').hide();
     load_all_posts();
     load_my_posts();
-    setInterval(updatePostInRealTime,15000);
+    setInterval(updatePostInRealTime,10000);
     //updatePostInRealTime();
     //updatePostInRealTime();
     //updatePost();
@@ -236,7 +236,9 @@ $(document).ready(function() {
             url:"postdiss.php",
             data: {"postname": postname, "text": text},
             success:function(res){
-               //alert(res);
+                //reload my posts;
+                load_all_posts();
+                load_my_posts();
             }
         });
         $('#postdiss').hide();
@@ -291,6 +293,7 @@ $(document).ready(function() {
             dataType: "html",
             success:function(response){
                 //reload my posts
+                load_all_posts();
                 load_my_posts();
             }
         });
@@ -322,6 +325,9 @@ $(document).ready(function() {
             url:"editPost.php",
             data:{"postId":postId, "postname":postname, "text":text},
             success:function(response){
+                //reload my posts;
+                load_all_posts();
+                load_my_posts();
             }
         });
         $('#editpost').hide();
@@ -402,6 +408,7 @@ $(document).ready(function() {
                     video.src='';
                     video.remove();
 
+                    //load_all_posts();
 
                     var postID = res;
                     //alert(postID);

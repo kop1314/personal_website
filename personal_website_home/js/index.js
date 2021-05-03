@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    //scroll to top when refresh page
+    $(window).on('beforeunload', function(){
+        $(window).scrollTop(0);
+    });
+
     //The following function is from W3school
     //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_smooth_scroll_jquery
     //access data: 03/20/21
@@ -31,14 +36,13 @@ $(document).ready(function(){
 
     /*project section*/
     /*slick slider*/
-    $('.card-slider').slick({
+    var slider = $('.card-slider').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         dots: true,
         arrows: true,
         autoplay: true,
         autoplaySpeed: 1000,
-        infinite: false,
         responsive: [
             {
                 breakpoint: 1024,
