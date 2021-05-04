@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7604f766-1caa-4f74-8c4c-c1e5b3fbf904" name="Default Changelist" comment="" />
+    <list default="true" id="7604f766-1caa-4f74-8c4c-c1e5b3fbf904" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/test2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/.idea/dataSources/e45c73d3-3924-45ae-b5a9-5fc6e3e2a1bc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/.idea/dataSources/e45c73d3-3924-45ae-b5a9-5fc6e3e2a1bc/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/.idea/dataSources/e45c73d3-3924-45ae-b5a9-5fc6e3e2a1bc/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/.idea/dataSources/e45c73d3-3924-45ae-b5a9-5fc6e3e2a1bc/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/js/discussion.js" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/js/discussion.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +145,8 @@
       <workItem from="1619481971969" duration="25599000" />
       <workItem from="1619649724110" duration="43022000" />
       <workItem from="1620072442788" duration="1078000" />
-      <workItem from="1620080377659" duration="2237000" />
+      <workItem from="1620080377659" duration="4180000" />
+      <workItem from="1620088597289" duration="5688000" />
     </task>
     <servers />
   </component>

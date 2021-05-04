@@ -3,17 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="eb0292f6-bae9-4c14-bfb6-fc04874166f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../personal_website_home/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../personal_website_home/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../personal_website_home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../personal_website_home/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal_website_home/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/test2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e45c73d3-3924-45ae-b5a9-5fc6e3e2a1bc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e45c73d3-3924-45ae-b5a9-5fc6e3e2a1bc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e45c73d3-3924-45ae-b5a9-5fc6e3e2a1bc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e45c73d3-3924-45ae-b5a9-5fc6e3e2a1bc/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e45c73d3-3924-45ae-b5a9-5fc6e3e2a1bc/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e45c73d3-3924-45ae-b5a9-5fc6e3e2a1bc/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deletepost.php" beforeDir="false" afterPath="$PROJECT_DIR$/deletepost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discussion.php" beforeDir="false" afterPath="$PROJECT_DIR$/discussion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/discussion.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/discussion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postJSON.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +132,8 @@
       <workItem from="1619481030221" duration="709000" />
       <workItem from="1619481969501" duration="1575000" />
       <workItem from="1619816723522" duration="4424000" />
+      <workItem from="1620087285668" duration="408000" />
+      <workItem from="1620088577652" duration="8152000" />
     </task>
     <servers />
   </component>
@@ -144,11 +143,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/discussion.js</url>
-          <line>265</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/load_all_post.php</url>
           <line>72</line>

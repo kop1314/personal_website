@@ -3,182 +3,212 @@ $(document).ready(function() {
     $('.post-form').hide();
     load_all_posts();
     load_my_posts();
-    setInterval(updatePostInRealTime,10000);
-    //updatePostInRealTime();
-    //updatePostInRealTime();
-    //updatePost();
+    updatePostInRealTime();
 
+    openPostHandler();
+    likePostHandler();
+    replyBtnHandler();
+    sendCommentHandler();
+    cancelCommentHandler();
+
+    postPaginationBtnHandler();
+
+    //create post handlers
+    initPostBtnHandler();
+    sendPostFormHandler();
+    returnPostFormHandler();
+
+    //user controls create, edit, delete post
+    openPostFormHandler();
+    editPostBtnHandler();
+    deletePostBtnHandler();
+
+    //edit form handlers
+    editFormReturnHandler();
+    editFormUpdateHandler();
+    myPostpaginationBtnHandler();
 
     //Event: display post
-    $('.all_post_form').on('click', '.post_display_btn', function(e){
+    function openPostHandler(){
+        $('.all_post_form').on('click', '.post_display_btn', function(e){
 
-        var myid = this.id;
-        if($('#up_'+myid).is(':visible')){
-            $('.discussion_container').hide();
-            $('.down').hide();
-            $('.up').show();
-            $('#up_'+myid).hide();
-            $('#down_'+myid).show();
-            $('#discussion_container_'+ myid).show();
+            var myid = this.id;
+            if($('#up_'+myid).is(':visible')){
+                $('.discussion_container').hide();
+                $('.down').hide();
+                $('.up').show();
+                $('#up_'+myid).hide();
+                $('#down_'+myid).show();
+                $('#discussion_container_'+ myid).show();
 
-            //load reply msg
-            //remove old comments
-            $('.reply_group_container').remove();
-            //display old comments with new comments
-            displayComments(myid);
-        } else{
-            $('#down_'+myid).hide();
-            $('#up_'+myid).show();
-            $('#discussion_container_'+myid).hide();
-        }
-        //create Vote object in db
-        //since it is viewed by someone
-        $.ajax({
-
-            type: "POST",
-            url: "create_vote.php",
-            data: {"postId": myid},
-            success:function(res)
-            {
-                //alert("finish creating vote");
-                if(res=="-1"){
-                    //rows exist in table
-                    //SKIP
-                } else {
-                    //first view
-                    //add 1 to number of viewers
-                    var text = $('#eye_' + myid).text();
-                    //alert(text);
-                    var num = parseInt(text, 10);
-                    //alert(num);
-                    var plus_1 = num + 1;
-                    $('#eye_' + myid).html(plus_1.toString());
-                }
+                //load reply msg
+                //remove old comments
+                $('.reply_group_container').remove();
+                //display old comments with new comments
+                displayComments(myid);
+            } else{
+                $('#down_'+myid).hide();
+                $('#up_'+myid).show();
+                $('#discussion_container_'+myid).hide();
             }
+            //create Vote object in db
+            //since it is viewed by someone
+            $.ajax({
+
+                type: "POST",
+                url: "create_vote.php",
+                data: {"postId": myid},
+                success:function(res)
+                {
+                    //alert("finish creating vote");
+                    if(res=="-1"){
+                        //rows exist in table
+                        //SKIP
+                    } else {
+                        //first view
+                        //add 1 to number of viewers
+                        var text = $('#eye_' + myid).text();
+                        //alert(text);
+                        var num = parseInt(text, 10);
+                        //alert(num);
+                        var plus_1 = num + 1;
+                        $('#eye_' + myid).html(plus_1.toString());
+                    }
+                }
+            });
+
+            e.preventDefault();
+
         });
-
-        e.preventDefault();
-
-    });
+    }
 
     //Event: like a post
-    $('.all_post_form').on('click', '.thumbs_up_container', function(e){
-        //alert("thumb is clicked");
-        var myid = this.id;
-        $(this).toggleClass('original_thumbs_up thumbs_up_container_toggle');
-        var isToggle = $(this).hasClass("thumbs_up_container_toggle");
-        var postId = this.id;
-        if (isToggle)
-        {
-            //like a post
-            $.ajax({
-                type: "POST",
-                url: "setLike.php",
-                data: {"postId": postId, "isLike": 1},
-                success:function(res)
-                {
-                    var text = $('#thumbs_up_' + myid).text();
-                    var num = parseInt(text, 10);
-                    var plus_1 = num + 1;
-                    $('#thumbs_up_' + myid).html(plus_1.toString());
-                    //alert("success");
-                }
-            })
-        } else{
-            //dislike a post
+    function likePostHandler(){
+        $('.all_post_form').on('click', '.thumbs_up_container', function(e){
+            //alert("thumb is clicked");
+            var myid = this.id;
+            $(this).toggleClass('original_thumbs_up thumbs_up_container_toggle');
+            var isToggle = $(this).hasClass("thumbs_up_container_toggle");
+            var postId = this.id;
+            if (isToggle)
+            {
+                //like a post
+                $.ajax({
+                    type: "POST",
+                    url: "setLike.php",
+                    data: {"postId": postId, "isLike": 1},
+                    success:function(res)
+                    {
+                        var text = $('#thumbs_up_' + myid).text();
+                        var num = parseInt(text, 10);
+                        var plus_1 = num + 1;
+                        $('#thumbs_up_' + myid).html(plus_1.toString());
+                        //alert("success");
+                    }
+                })
+            } else{
+                //dislike a post
 
-            $.ajax({
-                type: "POST",
-                url: "setLike.php",
-                data: {"postId": postId, "isLike": 0},
-                success:function(res)
-                {
-                    var text = $('#thumbs_up_' + myid).text();
-                    var num = parseInt(text, 10);
-                    var plus_1 = num - 1;
-                    $('#thumbs_up_' + myid).html(plus_1.toString());
-                    //alert("success");
-                }
-            })
-        }
-        e.preventDefault();
-    });
+                $.ajax({
+                    type: "POST",
+                    url: "setLike.php",
+                    data: {"postId": postId, "isLike": 0},
+                    success:function(res)
+                    {
+                        var text = $('#thumbs_up_' + myid).text();
+                        var num = parseInt(text, 10);
+                        var plus_1 = num - 1;
+                        $('#thumbs_up_' + myid).html(plus_1.toString());
+                        //alert("success");
+                    }
+                })
+            }
+            e.preventDefault();
+        });
+    }
 
     //Event: click reply
-    $('.all_post_form').on('click', '.reply_btn', function(e){
-        //myID has the form: [postID]_[reply_receiver_id]_[reply_group_id]
-        var myID = this.id;
-        var id_array = myID.split("_");
-        var postID = id_array[0];
-        //var reply_group_id = id_array[1];
-        var href = $(this).attr("href");
-        var reply_target_name = $(href).find('h').text();
-        $('#comment_container_' + postID).attr('placeholder', 'Reply To ' + reply_target_name);
+    function replyBtnHandler(){
+        $('.all_post_form').on('click', '.reply_btn', function(e){
+            //myID has the form: [postID]_[reply_receiver_id]_[reply_group_id]
+            var myID = this.id;
+            var id_array = myID.split("_");
+            var postID = id_array[0];
+            //var reply_group_id = id_array[1];
+            var href = $(this).attr("href");
+            var reply_target_name = $(href).find('h').text();
+            $('#comment_container_' + postID).attr('placeholder', 'Reply To ' + reply_target_name);
 
-        $('#comment_ui_' + postID).find('.send_comment_btn').attr('id', myID);
+            $('#comment_ui_' + postID).find('.send_comment_btn').attr('id', myID);
 
-    });
+        });
+    }
 
     //Event: send comment
-    $('.all_post_form').on('click', '.send_comment_btn', function(e){
+    function sendCommentHandler(){
+        $('.all_post_form').on('click', '.send_comment_btn', function(e){
 
-        //send comment
-        //myID has the form: [postID]_[reply_receiver_id]_[reply_group_id]
-        var myID = this.id;
-        var id_array = myID.split("_");
-        var postID = id_array[0];
-        var reply_receiver_id = id_array[1];
-        var reply_group_id = id_array[2];
-        var text = $('#comment_container_' + postID).val();
-        if(text==""){
-            return;
-        }
-        //0 for main reply, 1 for sub reply
-        var sub_reply_flag = 1;
-
-
-        //check if it is main reply
-        if($('#comment_container_'+ postID).attr('placeholder') == "say something...")
-        {
-            sub_reply_flag = 0;
-        }
-
-        //alert(text);
-        $.ajax({
-            type: "POST",
-            url: "sendComment.php",
-            data: {"postID": postID, "text": text, "sub_reply_flag": sub_reply_flag,
-                "reply_group_id": reply_group_id, "reply_receiver_id": reply_receiver_id},
-            success:function(res)
-            {
+            //send comment
+            //myID has the form: [postID]_[reply_receiver_id]_[reply_group_id]
+            var myID = this.id;
+            var id_array = myID.split("_");
+            var postID = id_array[0];
+            var reply_receiver_id = id_array[1];
+            var reply_group_id = id_array[2];
+            var text = $('#comment_container_' + postID).val();
+            if(text==""){
+                return;
             }
+            //0 for main reply, 1 for sub reply
+            var sub_reply_flag = 1;
+
+
+            //check if it is main reply
+            if($('#comment_container_'+ postID).attr('placeholder') == "say something...")
+            {
+                sub_reply_flag = 0;
+            }
+
+            //alert(text);
+            $.ajax({
+                type: "POST",
+                url: "sendComment.php",
+                data: {"postID": postID, "text": text, "sub_reply_flag": sub_reply_flag,
+                    "reply_group_id": reply_group_id, "reply_receiver_id": reply_receiver_id},
+                success:function(res)
+                {
+                }
+            });
+
+            //remove old comments
+            $('.reply_group_container').remove();
+
+            //display all comments
+            displayComments(postID);
+            $('#comment_container_' + postID).val('');
+            e.preventDefault();
         });
+    }
 
-        //remove old comments
-        $('.reply_group_container').remove();
-
-        //display all comments
-        displayComments(postID);
-        $('#comment_container_' + postID).val('');
-        e.preventDefault();
-    });
 
     //Event cancel comment
-    $('.all_post_form').on('click', '.cancel_comment_btn', function(e){
-        var postID = this.id;
-        //restore placeholder to default
-        $('#comment_container_' + postID).attr("placeholder", "say something...");
+    function cancelCommentHandler(){
+        $('.all_post_form').on('click', '.cancel_comment_btn', function(e){
+            var postID = this.id;
+            //restore placeholder to default
+            $('#comment_container_' + postID).attr("placeholder", "say something...");
 
-        //empty comment container
-        $("#comment_container_" + postID).val('');
+            //empty comment container
+            $("#comment_container_" + postID).val('');
 
-        //restore send button id to default
-        //myID has the form: [postID]_[reply_receiver_id]_[reply_group_id]
-        //-1 for default reply_receiver_id
-        //-1 for default reply_group_id
-        var default_id = postID + "_-1_-1";
-        $('#comment_ui_' + postID).find(".send_comment_btn").attr("id", default_id);
-    });
+            //restore send button id to default
+            //myID has the form: [postID]_[reply_receiver_id]_[reply_group_id]
+            //-1 for default reply_receiver_id
+            //-1 for default reply_group_id
+            var default_id = postID + "_-1_-1";
+            $('#comment_ui_' + postID).find(".send_comment_btn").attr("id", default_id);
+        });
+    }
 
     //pagination
     //load all posts
@@ -215,126 +245,145 @@ $(document).ready(function() {
     }
 
     //pagination load
-    $('.all_post_form').on('click', '.valid_btn', function(e){
-        var page = $(this).attr("id");
-        load_all_posts(page);
-        e.preventDefault();
-    });
+    function postPaginationBtnHandler(){
+        $('.all_post_form').on('click', '.valid_btn', function(e){
+            var page = $(this).attr("id");
+            load_all_posts(page);
+            e.preventDefault();
+        });
+    }
 
     //first post button
-    $('.mypostform').on('click', '.init-post-btn', function(e){
-        $('.mypostform').hide();
-        $('#postdiss').show();
-        e.preventDefault();
-    });
-
-    $('.post_mypost_post').click(function(e){
-        var postname = $('input[name="post_postname"]').val();
-        var text = $('textarea[name="post_text"]').val();
-        $.ajax({
-            type:"POST",
-            url:"postdiss.php",
-            data: {"postname": postname, "text": text},
-            success:function(res){
-                //reload my posts;
-                load_all_posts();
-                load_my_posts();
-            }
+    function initPostBtnHandler(){
+        $('.mypostform').on('click', '.init-post-btn', function(e){
+            $('.mypostform').hide();
+            $('#postdiss').show();
+            e.preventDefault();
         });
-        $('#postdiss').hide();
-        $('.mypostform').show();
-        e.preventDefault();
-    });
+    }
 
-    //return event for post form
-    $('.return_mypost_post').click(function(e)
-    {
-        $('#postdiss').hide();
-        $('.mypostform').show();
-        e.preventDefault();
-    });
+    function sendPostFormHandler(){
+        $('.post_mypost_post').click(function(e){
+            var postname = $('input[name="post_postname"]').val();
+            var text = $('textarea[name="post_text"]').val();
+            $.ajax({
+                type:"POST",
+                url:"postdiss.php",
+                data: {"postname": postname, "text": text},
+                success:function(res){
+                    //reload my posts;
+                    load_all_posts();
+                    load_my_posts();
+                }
+            });
+            $('#postdiss').hide();
+            $('.mypostform').show();
+            e.preventDefault();
+        });
+    }
+
+    function returnPostFormHandler(){
+        //return event for post form
+        $('.return_mypost_post').click(function(e)
+        {
+            $('#postdiss').hide();
+            $('.mypostform').show();
+            e.preventDefault();
+        });
+    }
 
     //post event for post form
-    $('.mypostform').on('click', '.post-btn', function(e){
-        $('.mypostform').hide();
-        $('#postdiss').show();
-        e.preventDefault();
-    });
+    function openPostFormHandler(){
+        $('.mypostform').on('click', '.post-btn', function(e){
+            $('.mypostform').hide();
+            $('#postdiss').show();
+            e.preventDefault();
+        });
+    }
 
     //edit post
-    $('.mypostform').on('click', '.edit_post', function(e)
-    {
-        //alert("eidt is clicked");
-        e.preventDefault();
-        $('.mypostform').hide();
+    function editPostBtnHandler(){
+        $('.mypostform').on('click', '.edit_post', function(e)
+        {
+            //alert("eidt is clicked");
+            e.preventDefault();
+            $('.mypostform').hide();
 
-        var postId = this.id;
-        $.ajax({
-            type: "POST",
-            url:"load_single_post.php",
-            data:{"postId": postId},
-            dataType:"html",
-            success:function(response){
-                $('#editpost').html(response);
-            }
+            var postId = this.id;
+            $.ajax({
+                type: "POST",
+                url:"load_single_post.php",
+                data:{"postId": postId},
+                dataType:"html",
+                success:function(response){
+                    $('#editpost').html(response);
+                }
+            });
+
+            $('#editpost').show();
         });
 
-        $('#editpost').show();
-    });
+    }
 
     //delete post
-    $('.mypostform').on('click', '.delete_post', function(e){
-        var postId = this.id;
-        //alert(postId);
-        $.ajax({
-            type: "POST",
-            url:"deletepost.php",
-            data:{"postId": postId},
-            dataType: "html",
-            success:function(response){
-                //reload my posts
-                load_all_posts();
-                load_my_posts();
-            }
+    function deletePostBtnHandler(){
+        $('.mypostform').on('click', '.delete_post', function(e){
+            var postId = this.id;
+            //alert(postId);
+            $.ajax({
+                type: "POST",
+                url:"deletepost.php",
+                data:{"postId": postId},
+                dataType: "html",
+                success:function(response){
+                    //reload my posts
+                    load_all_posts();
+                    load_my_posts();
+                }
+            });
+            e.preventDefault();
         });
-        e.preventDefault();
-    });
+    }
 
     //bind event handlers for edit post event
     //return event for edit form
-    $('#editpost').on('click', '.return_mypost_edit', function(e)
-    {
-        //alert("return is clicked");
-        $('#editpost').hide();
-        $('#edit_form').remove();
-        $('.mypostform').show();
-        e.preventDefault();
-    });
+    function editFormReturnHandler(){
+        $('#editpost').on('click', '.return_mypost_edit', function(e)
+        {
+            //alert("return is clicked");
+            $('#editpost').hide();
+            $('#edit_form').remove();
+            $('.mypostform').show();
+            e.preventDefault();
+        });
+    }
 
     //update event for edit form
-    $('#editpost').on('click', '.update_mypost_edit', function(e)
-    {
-        //alert("update is clicked");
-        var postId = $('.update_mypost_edit').attr("id");
-        var postname = $('input[name="edit_postname"]').val();
-        var text = $('textarea[name="edit_text"]').val();
-        //alert(postId +", " +postname + ", " + text);
+    function editFormUpdateHandler(){
+        $('#editpost').on('click', '.update_mypost_edit', function(e)
+        {
+            //alert("update is clicked");
+            var postId = $('.update_mypost_edit').attr("id");
+            var postname = $('input[name="edit_postname"]').val();
+            var text = $('textarea[name="edit_text"]').val();
+            //alert(postId +", " +postname + ", " + text);
 
-        $.ajax({
-            type:"POST",
-            url:"editPost.php",
-            data:{"postId":postId, "postname":postname, "text":text},
-            success:function(response){
-                //reload my posts;
-                load_all_posts();
-                load_my_posts();
-            }
+            $.ajax({
+                type:"POST",
+                url:"editPost.php",
+                data:{"postId":postId, "postname":postname, "text":text},
+                success:function(response){
+                    //reload my posts;
+                    load_all_posts();
+                    load_my_posts();
+                }
+            });
+            $('#editpost').hide();
+            $('#edit_form').remove();
+            $('.mypostform').show();
+            e.preventDefault();
         });
-        $('#editpost').hide();
-        $('#edit_form').remove();
-        $('.mypostform').show();
-        e.preventDefault();
-    });
+    }
 
     //pagination
     //load my posts
@@ -371,11 +420,14 @@ $(document).ready(function() {
     }
 
     //pagination button event handler
-    $('.mypostform').on('click', '.valid_btn', function(e){
-        var page = $(this).attr("id");
-        load_my_posts(page);
-        e.preventDefault();
-    });
+    function myPostpaginationBtnHandler(){
+        $('.mypostform').on('click', '.valid_btn', function(e){
+            var page = $(this).attr("id");
+            load_my_posts(page);
+            e.preventDefault();
+        });
+    }
+
 
     function displayComments(postID) {
         $.ajax({
@@ -388,7 +440,8 @@ $(document).ready(function() {
             }
         });
     }
-    function updatePostInRealTime() {
+
+    function updateTrendPost(){
 
         $.ajax({
             type: "POST",
@@ -421,12 +474,19 @@ $(document).ready(function() {
                         muted:true,
                         autoplay: true
                     });
-                    video.appendTo($(btnID));
+                    $(btnID).prepend(video);
                     $(btnID).find(".post_display_btn").removeClass("post_display_btn_normal");
                     $(btnID).find(".post_display_btn").addClass("post_display_btn_trend");
                 }
             }
         });
+
+
+        setTimeout(updateTrendPost, 5000);
+    }
+
+    function updatePostInRealTime() {
+        setTimeout(updateTrendPost, 5000);
     }
 
 });
