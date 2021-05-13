@@ -12,7 +12,7 @@ else{
     $page = 1;
 }
 
-$row_per_page = 10;
+$row_per_page = 3;
 $start_from = ($page - 1) * $row_per_page;
 
 $load_all_post_query = "SELECT * FROM `post` ORDER BY `timestamp` DESC LIMIT $start_from, $row_per_page";
@@ -21,18 +21,32 @@ $count_all_post_query = "SELECT * FROM `post`";
 if($result = $mysqli -> query($load_all_post_query)){
     if(mysqli_num_rows($result) > 0){
         echo '<table class="table all_post_table">';
+        $tmp_newest_postID = $_SESSION['newest_postID'];
         while($row = $result -> fetch_assoc()) {
+            $postName = $row['postname'];
+            $dots = "...";
             $numOfViewers = getNumOfViewers($row["postID"], $mysqli);
             $numOfLike = getNumOfLike($row["postID"], $mysqli);
             $like_flag = isLikePost($row["postID"], $email, $mysqli);
             //echo $numOfViewers;
             echo '<tr>';
             //echo '<td>';
-            echo '<div class="post_display_btn_block" id="post_display_btn_block_'.$row["postID"].'">';
+
+            //store the newest postID
+            if($row['postID'] > $tmp_newest_postID){
+                $tmp_newest_postID = $row['postID'];
+            }
+            if($row['postID'] > $_SESSION['newest_postID'] && $_SESSION['newest_postID'] > -1) {
+                //new post
+                echo '<div class="post_display_btn_block new_post_block" id="post_display_btn_block_'.$row["postID"].'">';
+            } else {
+                //old posts
+                echo '<div class="post_display_btn_block" id="post_display_btn_block_'.$row["postID"].'">';
+            }
             echo '<button class="post_display_btn post_display_btn_normal" id="'.$row["postID"].'">';
 
             echo '<span class="postname_container">';
-            echo $row["postname"];
+            echo (strlen($postName) > 20) ? substr($postName,0, 19).$dots : $postName;;
             echo '</span>';
 
             echo '<span class="arrow_container">';
@@ -128,6 +142,9 @@ if($result = $mysqli -> query($load_all_post_query)){
         }
         echo '</table>';
 
+        //set session vairable
+        $_SESSION['newest_postID'] = $tmp_newest_postID;
+
         $count_result = $mysqli->query($count_all_post_query);
         $total_row = $count_result->num_rows;
         $total_page = ceil($total_row/$row_per_page);
@@ -160,6 +177,8 @@ if($result = $mysqli -> query($load_all_post_query)){
             }
         }
         echo '</div>';
+
+
     } else {
         //no post yet
         //wait for code

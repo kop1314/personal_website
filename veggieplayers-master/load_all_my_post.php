@@ -30,11 +30,13 @@ if($result = $mysqli -> query($limit_query)){
         echo '<table class="table my_post_table" id="my-posts-table">';
         while($row = $result -> fetch_assoc()) {
             $numOfLike = getNumOfLike($row['postID'], $mysqli);
+            $postName = $row['postname'];
+            $dots = "...";
             echo '<tr id="'.$row['postID'].'">';
             //echo $row['postname'];
             echo '<td class="table_cell">';
             echo '<span class="title_container">';
-            echo $row['postname'];
+            echo (strlen($postName) > 20) ? substr($postName,0, 19).$dots : $postName;
             echo '</span>';
 
             echo '<span class="tool_container">';

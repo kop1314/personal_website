@@ -1,3 +1,5 @@
+var newest_postID = -1;
+
 $(document).ready(function() {
 
     $('.post-form').hide();
@@ -220,7 +222,9 @@ $(document).ready(function() {
             data: {"page": page},
             success:function(res)
             {
+                //console.log("print result");
                 $(".all_post_form").html(res);
+                //console.log("finish");
             },
             error: function (jqXHR, exception) {
                 var msg = '';
@@ -241,6 +245,10 @@ $(document).ready(function() {
                 }
                 $('.all_post_form').html(msg);
             },
+            complete: function(res) {
+                //setTimeout(delayUpdateAllPost, 5000);
+
+            }
         })
     }
 
@@ -276,6 +284,9 @@ $(document).ready(function() {
                     load_my_posts();
                 }
             });
+            //clear input field
+            $('input[name="post_postname"]').val("");
+            $('textarea[name="post_text"]').val("");
             $('#postdiss').hide();
             $('.mypostform').show();
             e.preventDefault();
@@ -286,6 +297,9 @@ $(document).ready(function() {
         //return event for post form
         $('.return_mypost_post').click(function(e)
         {
+            //clear input field
+            $('input[name="post_postname"]').val("");
+            $('textarea[name="post_text"]').val("");
             $('#postdiss').hide();
             $('.mypostform').show();
             e.preventDefault();
@@ -441,6 +455,24 @@ $(document).ready(function() {
         });
     }
 
+    function noPostIsVisible() {
+        var flag = true;
+        $(".discussion_container").each(function() {
+            if($(this).is(':visible')) {
+                flag = false;
+            }
+        });
+        return flag;
+    }
+
+    function updateAllPostHandler() {
+        if($('.pagination_btn.active').attr("id") == "1" && noPostIsVisible() == true){
+            load_all_posts();
+            updateTrendPost();
+        }
+        setTimeout(updateAllPostHandler, 5000);
+    }
+
     function updateTrendPost(){
 
         $.ajax({
@@ -451,6 +483,15 @@ $(document).ready(function() {
                 //alert("hi");
                 if(res == '-1'){
                     //alert("Failed to get data");
+                }else if(res == '0'){
+                    //no post is liked
+                    //remove all videos
+                    $(".post_display_btn").removeClass("post_display_btn_trend");
+                    $(".post_display_btn").addClass("post_display_btn_normal");
+                    var video = $("#video");
+                    video.trigger('pause');
+                    video.src='';
+                    video.remove();
                 }else{
                     //set all post_display_btn to normal
                     //delete all background videos
@@ -478,15 +519,33 @@ $(document).ready(function() {
                     $(btnID).find(".post_display_btn").removeClass("post_display_btn_normal");
                     $(btnID).find(".post_display_btn").addClass("post_display_btn_trend");
                 }
+            },
+            complete:function(data)
+            {
+                //setTimeout(updateTrendPost, 5000);
             }
         });
 
-
-        setTimeout(updateTrendPost, 5000);
     }
 
+    /*
+    function updateMostLikePost(){
+        $ajax({
+            type:"POST",
+            url: "updateMostLikePostInRealTime.php",
+            success:function(data){
+
+            },
+            complete:function (data){
+                setTimeout(updateMostLikePost, 5000);
+            }
+        });
+    }
+    */
+
+
     function updatePostInRealTime() {
-        setTimeout(updateTrendPost, 5000);
+        setTimeout(updateAllPostHandler, 5000);
     }
 
 });

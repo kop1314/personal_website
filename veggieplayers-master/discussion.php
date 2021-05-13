@@ -2,9 +2,9 @@
 /* Page to post discussions */
 require 'db.php';
 session_start();
+$_SESSION['newest_postID'] = -1;
 $email = $_SESSION['email'];
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
             <div class ="post-form" id="postdiss">
                 <h1>Post your thoughts!</h1>
-                <form action="discussion.php" method="post" autocomplete="off">
+                <form action="discussion.php" method="post">
                     <div class="field-wrap title-wrap">
                         <label>
                             Postname (Title)<span class="req">*</span>
@@ -122,9 +122,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                         </label>
                         <textarea required autocomplete="off" name="post_text"></textarea>
                     </div>
-
-                    <button class="post_mypost_post" />POST</button>
-                    <button class="return_mypost_post"/>RETURN</button>
+                    <button class="post_mypost_post">POST</button>
+                    <button class="return_mypost_post">RETURN</button>
                 </form>
 
             </div>
@@ -187,11 +186,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 						items[i].checked=false;
 		    }
         }
-    }
-    
-    function hideMyPosts(){
-        var posts = document.getElementById("mypostform")
-        posts.style.display = "none";
     }
     </script>
     
