@@ -41,7 +41,6 @@
         max-width: 80%;
         height: 500px;
         margin: 0 auto;
-        border: 1px solid blue;
     }
 
     .card-slider .slick-slide{
@@ -58,7 +57,6 @@
         position:relative;
         width:100%;
         height:100%;
-        text-align: center;
         transition: transform 0.6s;
         transform-style: preserve-3d;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -69,7 +67,7 @@
         transform: rotateY(180deg);
     }
 
-    .card-font, .card-back{
+    .card-front, .card-back{
         position: absolute;
         width: 100%;
         height: 100%;
@@ -77,15 +75,143 @@
         -webkit-backface-visibility: hidden;
     }
 
-    .card-font{
-        background-color: red;
+    .card-front{
+        background-color: #a2f3ee;
         color: white;
     }
 
+    svg{
+        background-color: #a2f3ee;
+    }
+
+    .card-front-content,
+    .card-back-content{
+        width: 100%;
+        height: 75%;
+    }
+
+    .card-front-content{
+        display:flex;
+        align-items: center;
+        margin-left: 5%;
+    }
+
+    .card-front-image-box,
+    .card-back-image-box {
+        width: 95%;
+        height: 90%;
+        background-size: 100% 100%;
+        border: 1px solid red;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .card-back-image-box{
+        filter:blur(10px);
+    }
+
+    .card-back-content-layer{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display:flex;
+        align-items: center;
+        margin-left: 5%;
+
+    }
+
+    .project-info-text{
+        position: absolute;
+        top: 0;
+        left: 5%;
+        bottom: 0;
+        right: 5%;
+
+    }
+
+    .project-info-text p{
+        color: #ffffff;
+        font-size: 20px;
+        padding: 5% 5% 5% 0;
+    }
+
+    .card-front-footer,
+    .card-back-footer{
+        width: 100%;
+        height: 25%;
+        background-color: #ffffff;
+    }
+
     .card-back{
-        background-color: blue;
+        background-color: #149991;
         color: white;
         transform: rotateY(180deg);
+    }
+
+    .more-info-btn-container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .more-info-btn-container a{
+        width: 40%;
+        height: 50%;
+        background-color: transparent;
+    }
+
+    .more-info-btn{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: transparent;
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 600;
+        color: #149991;
+        outline: none;
+        border: none;
+    }
+
+    .more-info-btn:before{
+        position: absolute;
+        content: '';
+        height: 0;
+        width: 0;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+    }
+
+    .more-info-btn:after{
+        position: absolute;
+        content: '';
+        height: 0;
+        width: 0;
+        bottom: 0;
+        right: 0;
+        box-sizing: border-box;
+    }
+
+    .more-info-btn:hover:before{
+        width: 100%;
+        height: 100%;
+        border-top: 2px solid #149991;
+        transition: width 0.5s linear,
+                    height 0.5s linear 0.5s;
+    }
+
+    .more-info-btn:hover:after{
+        width: 100%;
+        height: 100%;
+        border-bottom: 2px solid #149991;
+        transition: width 0.5s linear,
+        height 0.5s linear 0.5s;
     }
 
     .slick-dots li.slick-active button:before{
@@ -135,9 +261,50 @@
         <div class="card-slider">
             <div class="card-content" id="card-content-1">
                 <div class="card-inner">
-                    <div class="card-font"></div>
+                    <div class="card-front">
+                        <div class="card-front-content">
+                            <div class="card-front-image-box" id="card-front-image-box-1">
+                                <img class="card-front-images" src="images/veggiebirds_images/veggiebirds_discussion.png"
+                                     alt="veggiebirds_discussion_page">
+
+                            </div>
+                            <!----
+                            <img class="card-front-images" src="images/veggiebirds_images/veggiebirds_discussion.png"
+                                 alt="veggiebirds_discussion_page">
+                               ----->
+                        </div>
+
+                        <div class="card-front-footer">
+                            <svg height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <polygon points="0,0 95,0 65,100 0,100" style="fill: #ffffff"/>
+                                <polygon points="100,0 100,100 70,100" style="fill: #ffffff"/>
+                            </svg>
+                        </div>
+                    </div>
                     <div class="card-back">
-                        <h3>1</h3>
+                        <div class="card-back-content">
+                            <div class="card-back-content-layer">
+                                <div class="card-back-image-box" id="card-back-image-box-1">
+                                    <img class="card-front-images" src="images/veggiebirds_images/veggiebirds_discussion.png"
+                                         alt="veggiebirds_discussion_page">
+
+                                </div>
+                                <div class="project-info-text">
+                                    <p>The number of lines in a paragraph depends on the size of the browser window.
+                                        If you resize the browser window, the number of lines in this paragraph will
+                                        change.</p>
+                                </div>
+                            </div>
+                            <!----
+                            <img class="card-back-images" src="images/veggiebirds_images/veggiebirds_discussion.png"
+                                 alt="veggiebirds_discussion_page">
+                                 ----->
+                        </div>
+                        <div class="card-back-footer">
+                            <div class="more-info-btn-container">
+                                <a href="veggiebirds.html"><button class="more-info-btn">MORE</button></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -145,25 +312,106 @@
 
             <div class="card-content" id="card-content-2">
                 <div class="card-inner">
-                    <div class="card-font"></div>
+                    <div class="card-front">
+                        <div class="card-front-content">
+                            <div class="card-front-image-box" id="card-front-image-box-2">
+                                <img class="card-front-images" src="images/veggiebirds_images/veggiebirds_discussion.png"
+                                     alt="veggiebirds_discussion_page">
+
+                            </div>
+                            <!----
+                            <img class="card-front-images" src="images/veggiebirds_images/veggiebirds_discussion.png"
+                                 alt="veggiebirds_discussion_page">
+                               ----->
+                        </div>
+
+                        <div class="card-front-footer">
+                            <svg height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <polygon points="0,0 95,0 65,100 0,100" style="fill: #ffffff"/>
+                                <polygon points="100,0 100,100 70,100" style="fill: #ffffff"/>
+                            </svg>
+                        </div>
+                    </div>
                     <div class="card-back">
-                        <h3>2</h3>
+                        <div class="card-back-content">
+                            <div class="card-back-content-layer">
+                                <div class="card-back-image-box" id="card-back-image-box-2">
+                                    <img class="card-front-images" src="images/veggiebirds_images/veggiebirds_discussion.png"
+                                         alt="veggiebirds_discussion_page">
+
+                                </div>
+                                <div class="project-info-text">
+                                    <p>The number of lines in a paragraph depends on the size of the browser window.
+                                        If you resize the browser window, the number of lines in this paragraph will
+                                        change.</p>
+                                </div>
+                            </div>
+                            <!----
+                            <img class="card-back-images" src="images/veggiebirds_images/veggiebirds_discussion.png"
+                                 alt="veggiebirds_discussion_page">
+                                 ----->
+                        </div>
+                        <div class="card-back-footer">
+                            <div class="more-info-btn-container">
+                                <a href="veggiebirds.html"><button class="more-info-btn">MORE</button></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="card-content" id="card-content-3">
                 <div class="card-inner">
-                    <div class="card-font"></div>
+                    <div class="card-front">
+                        <div class="card-front-content">
+                            <div class="card-front-image-box" id="card-front-image-box-3">
+                                <img class="card-front-images" src="images/veggiebirds_images/veggiebirds_discussion.png"
+                                     alt="veggiebirds_discussion_page">
+                            </div>
+                            <!----
+                            <img class="card-front-images" src="images/veggiebirds_images/veggiebirds_discussion.png"
+                                 alt="veggiebirds_discussion_page">
+                               ----->
+                        </div>
+
+                        <div class="card-front-footer">
+                            <svg height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <polygon points="0,0 95,0 65,100 0,100" style="fill: #ffffff"/>
+                                <polygon points="100,0 100,100 70,100" style="fill: #ffffff"/>
+                            </svg>
+                        </div>
+                    </div>
                     <div class="card-back">
-                        <h3>3</h3>
+                        <div class="card-back-content">
+                            <div class="card-back-content-layer">
+                                <div class="card-back-image-box" id="card-back-image-box-3">
+                                    <img class="card-front-images" src="images/veggiebirds_images/veggiebirds_discussion.png"
+                                         alt="veggiebirds_discussion_page">
+
+                                </div>
+                                <div class="project-info-text">
+                                    <p>The number of lines in a paragraph depends on the size of the browser window.
+                                        If you resize the browser window, the number of lines in this paragraph will
+                                        change.</p>
+                                </div>
+                            </div>
+                            <!----
+                            <img class="card-back-images" src="images/veggiebirds_images/veggiebirds_discussion.png"
+                                 alt="veggiebirds_discussion_page">
+                                 ----->
+                        </div>
+                        <div class="card-back-footer">
+                            <div class="more-info-btn-container">
+                                <a href="veggiebirds.html"><button class="more-info-btn">MORE</button></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="card-content" id="card-content-4">
                 <div class="card-inner">
-                    <div class="card-font"></div>
+                    <div class="card-front"></div>
                     <div class="card-back">
                         <h3>4</h3>
                     </div>
@@ -172,7 +420,7 @@
 
             <div class="card-content" id="card-content-5">
                 <div class="card-inner">
-                    <div class="card-font"></div>
+                    <div class="card-front"></div>
                     <div class="card-back">
                         <h3>5</h3>
                     </div>
@@ -181,7 +429,7 @@
 
             <div class="card-content" id="card-content-6">
                 <div class="card-inner">
-                    <div class="card-font"></div>
+                    <div class="card-front"></div>
                     <div class="card-back">
                         <h3>6</h3>
                     </div>
@@ -190,7 +438,7 @@
 
             <div class="card-content" id="card-content-7">
                 <div class="card-inner">
-                    <div class="card-font"></div>
+                    <div class="card-front"></div>
                     <div class="card-back">
                         <h3>7</h3>
                     </div>
@@ -221,7 +469,7 @@
             arrows: true,
             autoplay: true,
             autoplaySpeed: 1000,
-            infinite: false,
+            infinite: true,
             responsive: [
                 {
                     breakpoint: 1024,

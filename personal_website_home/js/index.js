@@ -4,6 +4,14 @@ $(document).ready(function(){
         $(window).scrollTop(0);
     });
 
+    //navigation bar
+    $('.toggle').click(function(){
+        $('.toggle').toggleClass('active');
+        $('nav').toggleClass('active');
+        $('section').toggleClass('active');
+        $('.section').toggleClass('active');
+    })
+
     //The following function is from W3school
     //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_smooth_scroll_jquery
     //access data: 03/20/21
@@ -30,7 +38,7 @@ $(document).ready(function(){
 
 
     $(window).scroll(function(){
-        highlighNavItem();
+        highlightNavItem();
         startAnimationOnScroll();
     });
 
@@ -62,7 +70,7 @@ $(document).ready(function(){
         ]
     });
 
-    function highlighNavItem(){
+    function highlightNavItem(){
         var scrollPos = $(window).scrollTop();
         $('.section').each(function() {
             var offSetTop = $(this).offset().top;

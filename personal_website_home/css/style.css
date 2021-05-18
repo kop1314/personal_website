@@ -264,7 +264,7 @@ nav ul li a.active{
     border:none;
 }
 
-button:active{
+.about-text button:active{
     transform:scale(1.1)
 }
 
