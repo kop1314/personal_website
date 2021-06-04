@@ -16,7 +16,7 @@ else{
     $page = 1;
 }
 
-$row_per_page = 3;
+$row_per_page = 10;
 $start_from = ($page - 1) * $row_per_page;
 
 //$sql = "SELECT * FROM `post` LIMIT $start_from, $row_per_page";

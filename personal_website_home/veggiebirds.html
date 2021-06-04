@@ -8,6 +8,7 @@
   <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/project_template.js"></script>
   <!---<script type="text/javascript" src="js/index.js"></script>--->
 
 </head>
@@ -42,54 +43,105 @@
     <div class="content-left">
       <nav id="vertical-navigation-bar">
         <ul>
-          <li><a href="#section-1" class="active">section 1</a></li>
-          <li><a href="#section-2">section 2</a></li>
-          <li><a href="#section-3">section 3</a></li>
+          <li><a href="#section-1" class="active">Backstory</a></li>
+          <li><a href="#section-2">Registration</a></li>
+          <li><a href="#section-3">Publish your post</a></li>
+          <li><a href="#section-4">On Fire!!!</a></li>
         </ul>
 
       </nav>
     </div>
 
     <div class="content-right">
-      <div class="project-info-section" id="section-1">1</div>
-      <div class="project-info-section" id="section-2">2</div>
-      <div class="project-info-section" id="section-3">3</div>
+      <div class="project-info-section" id="section-1">
+        <h1>Backstory</h1>
+        <p>
+          This project is a real-time updated platform for people around the world to share their thoughts about
+          League of Legends, a multiplayer online battle arena video game. I came out the idea and implement this
+          platform with Xun Zhang and Fang Guo back in 2018 when we took the course, CS421 Database System,
+          in University of Illinois at Urbana-Champaign.
+          Check out <a href="https://wiki.illinois.edu/wiki/display/cs411sp18/Veggiebirds">here</a>
+          for more information about our team. Since I am including this project in my website,
+          I feel better to keep and improve the parts of project I worked on. The front end of the platform is
+          implemented by HTML, Javascript and CSS. To set up communication between browser and database, I use PHP
+          to make a connection to MySQL database via Ajax calls. The platform is currently hosted by InfinityFree,
+          a free web hosting. To get started with the platform, click
+          <a href="https://veggiebirds.freecluster.eu/veggieplayers-master/index.php">here</a> or paste the
+          below website address in your favorite browser!
+        </p>
+        <div class="link-copy-box">
+          <input id="veggiebirds_web_address" type="text" value="https://veggiebirds.freecluster.eu/veggieplayers-master/index.php" readonly>
+          <button onclick="copyToClipboard()"><i class="fas fa-copy"></i></button>
+        </div>
+      </div>
+      <div class="project-info-section" id="section-2">
+        <h1>Registration</h1>
+        <p>
+          In order to access the platform, you have to first create a user account. For the email address,
+          a fake email is good enough because there is no confirmation email. But the fake email must be in
+          valid email format, a @ symbol with an email prefix on its left and an email domain on its right
+          (<span style="color:#ffffff; background:#149991">email_prefix@email_domain</span>).
+          An example of a fake email will be <span style="color:#ffffff; background:#149991">example@mail.com</span>
+          where <span style="color:#ffffff; background:#149991">example</span> is the email prefix and
+          <span style="color:#ffffff; background:#149991">mail.com</span> is the email domain.
+          Simply filling out the below form and click
+          <span style="color:#ffffff; background: rgba(255,69,0,0.4);">REGISTER</span> will send you to the forum page.
+        </p>
+
+        <img src="images/veggiebirds_images/signup_form.png" alt="signup_form">
+
+        <p>You can also login to the forum with the below email and password:<br>
+        <span style="background: #c9c9c9">email: new_user@gmail.com<br> password: new_user</span></p>
+      </div>
+      <div class="project-info-section" id="section-3">
+        <h1>Publish your post</h1>
+        <p>After logging in to the forum page, you can publish your first post by clicking
+          <span style="color:#ffffff; background: rgba(0, 139, 139, 0.6);">Create</span>
+          in <span style="color:#ffffff; background: #0a2e2e;transform: perspective(5px) rotateX(2deg); border-radius: 0;">My Posts</span> section. See below:
+        </p>
+
+        <img src="images/veggiebirds_images/mypost_form.png" alt="myposts_form">
+
+        <p>
+          Filling out the form below and click
+          <span style="background-color: #FFFFFF; color: rgba(0, 139, 139, 0.9);">POST</span>
+          to share your thoughts with other people!
+        </p>
+
+        <img src="images/veggiebirds_images/post_form.png" alt="post_form">
+
+        <p>Navigate to
+          <span style="color:#ffffff; background: #0a2e2e;transform: perspective(5px) rotateX(2deg); border-radius: 0;">Posts</span>
+          section and find your first post!
+        </p>
+
+        <img src="images/veggiebirds_images/posts_section.png" alt="posts_section">
+
+      </div>
+      <div class="project-info-section" id="section-4">
+        <h1>On Fire!!!</h1>
+        <p>
+          Do you want your post on fire? Just make your post attractive and get the most number of
+          <span><i class="far fa-thumbs-up" style="font-weight:900; color:#FF1493;"></i></span> from other users!
+        </p>
+
+        <img src="images/veggiebirds_images/on_fire.png" alt="on_fire">
+
+      </div>
     </div>
   </div>
 
 </div>
 
 <script>
-  $(document).ready(function(){
-    $(window).scroll(function(){
-      highlightVerticalNavItem();
-    });
-
-    function highlightVerticalNavItem(){
-      var scrollPos = $(window).scrollTop();
-      $('.project-info-section').each(function() {
-        console.log($(this).attr('id'));
-        var offSetTop = $(this).offset().top;
-        //var sectionHeight = $(this).clientHeight;
-        var offSetHeight = $(this).outerHeight();
-        //check if scroll into section view
-        //adjust with -55 for fixed navbar
-        if((offSetTop - 100) <= scrollPos &&
-                scrollPos < offSetTop + offSetHeight - 100){
-        /*if((offSetTop - 55) <= scrollPos &&
-                scrollPos < offSetTop + offSetHeight - 55){*/
-          //remove active class
-          $('.content-left > nav > ul > li > a').each(function() {
-            $(this).removeClass("active");
-          });
-          //add active class
-          var id = $(this).attr('id');
-          $('a[href="#'+ id +'"]').addClass("active");
-          //console.log(id);
-        }
-      });
-    }
-  })
+  /*The idea of the following function comes from w3schools
+  * website address: https://www.w3schools.com/howto/howto_js_copy_clipboard.asp*/
+  function copyToClipboard(){
+    var copyText = document.getElementById("veggiebirds_web_address");
+    copyText.select();
+    copyText.setSelectionRange(0, 1000);
+    document.execCommand("copy");
+  }
 </script>
 
 </body>

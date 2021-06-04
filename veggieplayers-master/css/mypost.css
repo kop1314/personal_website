@@ -72,6 +72,11 @@
     display:flex;
     justify-content: center;/*align horizontally*/
     align-items: center;/*align vertically*/
+    transition: transform .2s;
+}
+
+.tool_span:hover{
+    transform: scale(1.25);
 }
 
 .my_post_table td span:first-child{

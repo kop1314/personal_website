@@ -3,10 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="eb0292f6-bae9-4c14-bfb6-fc04874166f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../personal_website_home/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal_website_home/css/project_template.css" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/css/project_template.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal_website_home/css/projects.css" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/css/projects.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../personal_website_home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal_website_home/project_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/project_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal_website_home/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/test2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal_website_home/veggiebirds.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/veggiebirds.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/yasuo.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/css.html" beforeDir="false" afterPath="$PROJECT_DIR$/css/css.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/mypost.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mypost.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_all_my_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/load_all_my_post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_all_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/load_all_post.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +144,9 @@
       <workItem from="1620870341548" duration="6259000" />
       <workItem from="1621004374463" duration="665000" />
       <workItem from="1621005136860" duration="655000" />
+      <workItem from="1621434351163" duration="1899000" />
+      <workItem from="1621443779155" duration="6119000" />
+      <workItem from="1622666775862" duration="41000" />
     </task>
     <servers />
   </component>

@@ -13,6 +13,8 @@ session_start();
     ob_start();
     include 'css/css.html'; 
     ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
 </head>
 
 <?php 
@@ -116,9 +118,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </div><!-- tab-content -->
       
 </div> <!-- /form -->
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-    <script src="js/index.js"></script>
 
 </body>
 </html>

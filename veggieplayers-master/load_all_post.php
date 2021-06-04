@@ -12,7 +12,7 @@ else{
     $page = 1;
 }
 
-$row_per_page = 3;
+$row_per_page = 10;
 $start_from = ($page - 1) * $row_per_page;
 
 $load_all_post_query = "SELECT * FROM `post` ORDER BY `timestamp` DESC LIMIT $start_from, $row_per_page";

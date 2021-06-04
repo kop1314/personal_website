@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shell</title>
+    <link rel="stylesheet" type="text/css" href="css/project_template.css"/>
+
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/project_template.js"></script>
+</head>
+<body>
+<!-----top horizontal navigation bar---->
+<nav id="top-horizontal-navigation-bar">
+    <!----logo------>
+    <div class="logo_container">
+        <video class="video" muted autoplay loop>
+            <source src="video/dark_lightning_thunder.mp4" type="video/mp4">
+            <source src="video/dark_lightning_thunder.webm" type="video/webm">
+        </video>
+        <a href="#" class="logo">Felix</a>
+    </div>
+
+    <!--menu-->
+    <ul>
+        <li><a href="index.html#text-container-1">Home</a></li>
+        <li><a href="index.html#about-container-1">About</a></li>
+        <li><a href="index.html#skill-container-1">Skills</a></li>
+        <li><a href="index.html#projects-container-1" class="active">Projects</a></li>
+        <li><a href="index.html#contact-container-1">Contact</a></li>
+        <!----<li><a href="#"></a></li>---->
+    </ul>
+    <!-----------bars------------------->
+    <div class="toggle"></div>
+</nav>
+
+<div class="project-info-grid">
+    <div class="project-info-container">
+        <div class="content-left">
+            <nav id="vertical-navigation-bar">
+                <ul>
+                    <li><a href="#section-1" class="active">Overview</a></li>
+                    <li><a href="#section-2">Run the Shell</a></li>
+                    <li><a href="#section-3">Commands</a></li>
+                    <li><a href="#section-4">Logical Operators</a></li>
+                    <li><a href="#section-5">Background Processes</a></li>
+
+                </ul>
+
+            </nav>
+        </div>
+
+        <div class="content-right">
+            <div class="project-info-section" id="section-1">
+                <h1>Overview</h1>
+                <p>
+                    This customized shell was implemented in 2018 when I started to learn System Programming using C.
+                    It is responsible for extracting the commands from the command line as inputs and executing
+                    the corresponding programs or scripts. The shell supports several built-in commands and any
+                    external commands that can be executed by the machine. In addition, it also supports
+                    multiprocessing; commands can be run in both foreground process and background process at the same
+                    time.
+                </p>
+            </div>
+            <div class="project-info-section" id="section-2">
+                <h1>Run the Shell</h1>
+                <p>
+                    If you are familiar with Bash, simply open your terminal and change your current working directory
+                    to where you store the shell program. Then, type in the below command in your terminal and hit
+                    ENTER: <br>
+                    <span class="command-line-container">./shell</span>
+                </p>
+
+                <div class="project-info-section-sub">
+                    <h2>Flag: <span class="inline-cmd">-h</span></h2>
+                    <p>
+                        123
+                    </p>
+                </div>
+
+                <div class="project-info-section-sub">
+                    <h2>Flag: <span class="inline-cmd">-f</span></h2>
+                    <p>
+                        456
+                    </p>
+                </div>
+
+            </div>
+            <div class="project-info-section" id="section-3">
+                <h1>Commands</h1>
+            </div>
+            <div class="project-info-section" id="section-4">
+                <h1>Logical Operators</h1>
+            </div>
+            <div class="project-info-section" id="section-5">
+                <h1>Background Processes</h1>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+</script>
+
+
+</body>
+</html>

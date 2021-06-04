@@ -93,6 +93,7 @@ svg{
 
 .card-back-image-box{
     filter:blur(10px);
+    opacity: 0.8;
 }
 
 .card-back-content-layer{

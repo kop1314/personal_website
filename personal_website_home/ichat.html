@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iChat</title>
+  <link rel="stylesheet" type="text/css" href="css/project_template.css"/>
+
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/project_template.js"></script>
+</head>
+<body>
+<!-----top horizontal navigation bar---->
+<nav id="top-horizontal-navigation-bar">
+  <!----logo------>
+  <div class="logo_container">
+    <video class="video" muted autoplay loop>
+      <source src="video/dark_lightning_thunder.mp4" type="video/mp4">
+      <source src="video/dark_lightning_thunder.webm" type="video/webm">
+    </video>
+    <a href="#" class="logo">Felix</a>
+  </div>
+
+  <!--menu-->
+  <ul>
+    <li><a href="index.html#text-container-1">Home</a></li>
+    <li><a href="index.html#about-container-1">About</a></li>
+    <li><a href="index.html#skill-container-1">Skills</a></li>
+    <li><a href="index.html#projects-container-1" class="active">Projects</a></li>
+    <li><a href="index.html#contact-container-1">Contact</a></li>
+    <!----<li><a href="#"></a></li>---->
+  </ul>
+  <!-----------bars------------------->
+  <div class="toggle"></div>
+</nav>
+
+<div class="project-info-grid">
+  <div class="project-info-container">
+    <div class="content-left">
+      <nav id="vertical-navigation-bar">
+        <ul>
+          <li><a href="#section-1" class="active">Backstory</a></li>
+          <li><a href="#section-2">Registration</a></li>
+          <li><a href="#section-3">Find your friend</a></li>
+          <li><a href="#section-4">Start chatting</a></li>
+        </ul>
+
+      </nav>
+    </div>
+
+    <div class="content-right">
+      <div class="project-info-section" id="section-1">
+        <h1>Backstory</h1>
+        <p>
+          This Android Application is a real-time chat app which I built back in 2017 when I took the course,
+          CS126 Software Design Studio, in the University of Illinois at Urbana-Champaign (UIUC). This project was
+          built with the use of <a href="https://firebase.google.com/">Firebase</a>, a real-time database developed
+          by Google. My goal was designing and implementing an application that building up the network where alumni, faculty
+          or current college students can share their employment resources, such as job posts and job referrals with
+          students in UIUC. Unfortunately, it was hard to accomplish my goal by working on this project in less
+          than one month by myself. But my Android Application is enough for users to chat with friends!
+        </p>
+      </div>
+      <div class="project-info-section" id="section-2">
+        <h1>Registration</h1>
+        <p>
+          In order to access the platform, you have to first create a user account. For the email address,
+          a fake email is good enough because there is no confirmation email. But the fake email must be in
+          valid email format, a @ symbol with an email prefix on its left and an email domain on its right
+          (<span style="color:#ffffff; background:#149991">email_prefix@email_domain</span>).
+          An example of a fake email will be <span style="color:#ffffff; background:#149991">example@mail.com</span>
+          where <span style="color:#ffffff; background:#149991">example</span> is the email prefix and
+          <span style="color:#ffffff; background:#149991">mail.com</span> is the email domain.
+          Simply filling out the below form and click
+          <span style="color:#ffffff; background: #ff6500;">REGISTER</span> will send you to the chat page.
+        </p>
+
+        <div class="image-box">
+          <img src="images/ichat/registration_example.png" alt="registration_example">
+        </div>
+
+        <p>
+          Alternately, you can login to the chat page with the below email and password:<br>
+          <span style="background: #c9c9c9">email: newuser@gmail.com<br> password: newuser</span>
+        </p>
+        <div class="image-box">
+          <img src="images/ichat/login_example.png" alt="login_example">
+        </div>
+
+      </div>
+      <div class="project-info-section" id="section-3">
+        <h1>Find your friend</h1>
+        <p>
+          Now, it is time to look for your friends and add them to your chat list. To find your friend, click on toggle
+          on the top right corner first. Then, press <span style="background: #EAEDF0;"><i class="fas fa-user-plus" style="color:#FF6D00"></i> Add Friends</span>
+          and look for your friends by typing their names in the search bar.
+        </p>
+        <div class="image-box">
+          <img src="images/ichat/click_toggle.png" alt="click_toggle">
+        </div>
+        <div class="image-box">
+          <img src="images/ichat/search_friend.png" alt="search_friend">
+        </div>
+
+      </div>
+      <div class="project-info-section" id="section-4">
+        <h1>Start chatting</h1>
+        <p>
+          After you added your friends to your chat list, you can now find your friend in your chat page.
+        </p>
+
+        <div class="image-box">
+          <img src="images/ichat/chatpage.png" alt="chatpage">
+        </div>
+
+        <p>
+          To start a chat, click on a name of anyone of your friends you would like to talk to. Next, a chatroom
+          will be created for the conversation between you and your friend.
+        </p>
+        <div class="image-box">
+          <img src="images/ichat/chatroom.png" alt="chatroom">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
