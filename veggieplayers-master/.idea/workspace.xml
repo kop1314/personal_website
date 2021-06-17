@@ -3,18 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="eb0292f6-bae9-4c14-bfb6-fc04874166f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../personal_website_home/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../personal_website_home/css/project_template.css" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/css/project_template.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../personal_website_home/css/projects.css" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/css/projects.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../personal_website_home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../personal_website_home/project_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/project_template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../personal_website_home/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/test2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../personal_website_home/veggiebirds.html" beforeDir="false" afterPath="$PROJECT_DIR$/../personal_website_home/veggiebirds.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/css.html" beforeDir="false" afterPath="$PROJECT_DIR$/css/css.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/mypost.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mypost.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_all_my_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/load_all_my_post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/post.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/post.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/discussion.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/discussion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/load_all_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/load_all_post.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,8 +89,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/css/image" />
       <recent name="$PROJECT_DIR$/video" />
+      <recent name="$PROJECT_DIR$/css/image" />
       <recent name="$PROJECT_DIR$/css" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -147,6 +141,8 @@
       <workItem from="1621434351163" duration="1899000" />
       <workItem from="1621443779155" duration="6119000" />
       <workItem from="1622666775862" duration="41000" />
+      <workItem from="1622813602802" duration="5823000" />
+      <workItem from="1623338216829" duration="719000" />
     </task>
     <servers />
   </component>
@@ -158,7 +154,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/load_all_post.php</url>
-          <line>86</line>
+          <line>95</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -168,7 +164,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/discussion.js</url>
-          <line>475</line>
+          <line>477</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>

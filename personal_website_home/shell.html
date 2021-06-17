@@ -60,7 +60,13 @@
                     the corresponding programs or scripts. The shell supports several built-in commands and any
                     external commands that can be executed by the machine. In addition, it also supports
                     multiprocessing; commands can be run in both foreground process and background process at the same
-                    time.
+                    time. <br><br>
+
+                    Since the implementation of the shell is dependent of a given
+                    <a href="https://en.wikipedia.org/wiki/Ar_(Unix)">archiver</a> which contains some callback
+                    functions, the program can <b>ONLY</b> be built and run in a linux machine. The version for Windows
+                    and macOS will be provided in the future once I replace the archiver with my owned code. To start
+                    playing with the shell, download it from <a href="#">here</a>.
                 </p>
             </div>
             <div class="project-info-section" id="section-2">
@@ -68,33 +74,397 @@
                 <p>
                     If you are familiar with Bash, simply open your terminal and change your current working directory
                     to where you store the shell program. Then, type in the below command in your terminal and hit
-                    ENTER: <br>
+                    ENTER to use <i>default</i> mode of the shell: <br>
                     <span class="command-line-container">./shell</span>
                 </p>
 
                 <div class="project-info-section-sub">
                     <h2>Flag: <span class="inline-cmd">-h</span></h2>
                     <p>
-                        123
+                        When the <span class="inline-cmd">-h</span> flag is specified, the shell will store the history
+                        of commands executed across shell sessions in a file with given
+                        <span class="inline-cmd">filename</span>. See the below usage: <br>
+
+                        <span class="command-line-container">./shell -h &lt;filename&gt; </span> <br><br>
+
+                        If the history file with the given <span class="inline-cmd">filename</span> does not exist, the
+                        shell will treat it as an empty file. Since the shell will load the content of the history file
+                        as its history and append the executed commands of the current session into the history file
+                        upon exiting, the format of the history file must be a series of executed commands as follow:
+                        <br><br>
+
+                        <span class="inline-cmd">history.txt</span>:<br>
+                        <span class="command-line-container">
+                            ls<br>
+                            ps<br>
+                        </span> <br><br>
+
+                        Run the shell with the <span class="inline-cmd">-h</span> flag: <br>
+
+                        <span class="command-line-container">
+                            ./shell -h history.txt<br>
+                            (pid=1234)/home/user$ echo hello<br>
+                            Command executed by pid=1235<br>
+                            hello<br>
+                            (pid=1234)/home/user$ exit
+                        </span> <br><br>
+
+                        UPDATED <span class="inline-cmd">history.txt</span>:<br>
+                        <span class="command-line-container">
+                            ls<br>
+                            ps<br>
+                            echo hello<br>
+                        </span>
                     </p>
                 </div>
 
                 <div class="project-info-section-sub">
                     <h2>Flag: <span class="inline-cmd">-f</span></h2>
                     <p>
-                        456
+                        When the <span class="inline-cmd">-f</span> flag is specified, the shell will run a series of
+                        commands that are stored in the file with given <span class="inline-cmd">filename</span>.
+                        See the below usage: <br>
+
+                        <span class="command-line-container">./shell -f &lt;filename&gt; </span> <br><br>
+
+                        The shell will execute the commands and print the corresponding result in sequential order until
+                        the end of the file. See the below example: <br><br>
+
+                        <span class="inline-cmd">commands.txt</span>:<br>
+                        <span class="command-line-container">
+                            echo hello<br>
+                            ls<br>
+                        </span> <br><br>
+
+                        The result will be printed as follow:<br>
+
+                        <span class="command-line-container">
+                            ./shell -f commands.txt<br>
+                            (pid=1234)/home/user$ echo hello<br>
+                            Command executed by pid=1235<br>
+                            hello<br>
+                            (pid=1234)/home/user$ ls<br>
+                            Command executed by pid=1236<br>
+                            example1.txt example2.txt shell
+                        </span> <br><br>
                     </p>
                 </div>
 
             </div>
             <div class="project-info-section" id="section-3">
                 <h1>Commands</h1>
+
+                <h2>Built-in Commands:</h2><br><br>
+
+                <div class="project-info-section-sub">
+                    <h2><span class="inline-cmd">cd &lt;path&gt;</span></h2>
+                    <p>
+                        This command changes the current working directory of the shell to
+                        <span class="inline-cmd">&lt;path&gt;</span>. Unlike the regular
+                        <span class="inline-cmd">cd</span> which changes the current working directory to home directory
+                        when <span class="inline-cmd">&lt;path&gt;</span> is not specified, this new
+                        <span class="inline-cmd">cd</span> must be given a path to destination. Otherwise, the shell
+                        will treat it as non-existent directory. See the below example:<br>
+
+                        <span class="command-line-container">
+                            (pid=1234)/home/user$ ls<br>
+                            Command executed by pid=1235<br>
+                            new_directory shell<br>
+                            (pid=1234)/home/user$ cd new_directory<br>
+                            (pid=1234)/home/user/new_directory$ ls<br>
+                            Command executed by pid=4567<br>
+                            no_directory.txt<br>
+                            (pid=1234)/home/user/new_directory$ cd another_directory<br>
+                            another_directory: No such file or directory!<br>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="project-info-section-sub">
+                    <h2><span class="inline-cmd">!history</span></h2>
+                    <p>
+                        This command prints a series of commands from the shell's history in chronological order.
+                        Note that this command itself will not be stored in the history. See the below example: <br>
+
+                        <span class="command-line-container">
+                            //Assume the history is empty<br>
+                            (pid=1234)/home/user$ echo hi<br>
+                            Command executed by pid=1235<br>
+                            hi<br>
+                            (pid=1234)/home/user$ ls<br>
+                            Command executed by pid=1236<br>
+                            example1.txt example2.txt shell<br>
+                            (pid=1234)/home/user$ pwd<br>
+                            Command executed by pid=1237<br>
+                            /home/user<br>
+                            (pid=1234)/home/user/$ !history<br>
+                            0 echo hi<br>
+                            1 ls<br>
+                            2 pwd<br>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="project-info-section-sub">
+                    <h2><span class="inline-cmd">#&lt;n&gt;</span></h2>
+                    <p>
+                        This command prints and executes the n-th (from the earliest to the most recent) command in the shell's
+                        history. Note that <span class="inline-cmd">n</span> is a non-negative integer and
+                        <span class="inline-cmd">#&lt;n&gt;</span> itself will not be stored in the history, but the
+                        command being executed will. See the below example: <br>
+
+                        <span class="command-line-container">
+                            //Assume the history is empty<br>
+                            (pid=1234)/home/user$ echo hi<br>
+                            Command executed by pid=1235<br>
+                            hi<br>
+                            (pid=1234)/home/user$ ls<br>
+                            Command executed by pid=1236<br>
+                            example1.txt example2.txt shell<br>
+                            (pid=1234)/home/user$ pwd<br>
+                            Command executed by pid=1237<br>
+                            /home/user<br>
+                            (pid=1234)/home/user/$ !history<br>
+                            0 echo hi<br>
+                            1 ls<br>
+                            2 pwd<br>
+                            (pid=1234)/home/user/$ #0<br>
+                            echo hi<br>
+                            hi<br>
+                            (pid=1234)/home/user/$ !history<br>
+                            0 echo hi<br>
+                            1 ls<br>
+                            2 pwd<br>
+                            3 echo hi<br>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="project-info-section-sub">
+                    <h2><span class="inline-cmd">!&lt;prefix&gt;</span></h2>
+                    <p>
+                        This command prints and executes the last command that has the given prefix. Note that the
+                        most recent command will be executed when prefix is empty and
+                        <span class="inline-cmd">!&lt;prefix&gt;</span> itself will not be stored in the history, but
+                        the command being executed will. See the below example: <br>
+
+                        <span class="command-line-container">
+                            //Assume the history is empty<br>
+                            (pid=1234)/home/user$ echo hi, Felix<br>
+                            Command executed by pid=1235<br>
+                            hi, Felix<br>
+                            (pid=1234)/home/user$ echo hello, Mike<br>
+                            Command executed by pid=1236<br>
+                            hello, Mike<br>
+                            (pid=1234)/home/user$ !echo h<br>
+                            echo hello, Mike<br>
+                            Command executed by pid=1237<br>
+                            hello, Mike<br>
+                            (pid=1234)/home/user$ !echo hi<br>
+                            echo hi, Felix<br>
+                            Command executed by pid=1238<br>
+                            hi, Felix<br>
+                            (pid=1234)/home/user/$ !history<br>
+                            0 echo hi, Felix<br>
+                            1 echo hello, Mike<br>
+                            2 echo hello, Mike<br>
+                            3 echo hi, Felix<br>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="project-info-section-sub">
+                    <h2><span class="inline-cmd">exit</span></h2>
+                    <p>
+                        This command will exit the shell with exit status = 0. Any running or stopping background
+                        processes are killed once <span class="inline-cmd">exit</span> is executed by the shell. Note
+                        that you can only exit the shell with the <span class="inline-cmd">exit</span> command or
+                        sending <span style="background: #c9c9c9">EOF</span> signal to the shell by typing
+                        <span style="background: #c9c9c9">Ctrl + D</span>.
+                        <span style="background: #c9c9c9">Ctrl + C</span> only terminates the currently running
+                        foreground process instead of terminating this shell program.
+                    </p>
+                </div>
+
+                <div class="project-info-section-sub">
+                    <h2><span class="inline-cmd">kill &lt;pid&gt;</span></h2>
+                    <p>
+                        This command will terminate the direct child process with given
+                        <span class="inline-cmd">&lt;pid&gt;</span>. Since the child process will not exist after the
+                        execution of this command, the child process will not be resumed.
+                    </p>
+                </div>
+
+                <div class="project-info-section-sub">
+                    <h2><span class="inline-cmd">stop &lt;pid&gt;</span></h2>
+                    <p>
+                        This command will stop the running child process with given
+                        <span class="inline-cmd">&lt;pid&gt;</span>. The child process can be resumed by using
+                        <span class="inline-cmd">cont &lt;pid&gt;</span>.
+                    </p>
+                </div>
+
+                <div class="project-info-section-sub">
+                    <h2><span class="inline-cmd">cont &lt;pid&gt;</span></h2>
+                    <p>
+                        This command will resume the child process with given
+                        <span class="inline-cmd">&lt;pid&gt;</span>.
+                    </p>
+                </div>
+
+                <h2>External Commands:</h2>
+
+                <p>
+                    Any commands (e.g <span class="inline-cmd">ls</span>, <span class="inline-cmd">echo</span> and more)
+                    other than the above commands will be treated as external commands by the shell. All external
+                    commands will be run in <span style="background: #c9c9c9">fork/exec/wait</span> paradigm, where the
+                    parent process creates a child process which is responsible for running the given command, and the
+                    parent process must wait for the child process finish running before printing the prompt for the
+                    next user input in the terminal. To know more about
+                    <span style="background: #c9c9c9">fork/exec/wait</span> paradigm, check out
+                    <a href="https://en.wikipedia.org/wiki/Fork%E2%80%93exec">here</a>.
+                </p>
+
             </div>
             <div class="project-info-section" id="section-4">
                 <h1>Logical Operators</h1>
+                <div class="project-info-section-sub">
+                    <h2>AND: <span class="inline-cmd">&&</span></h2>
+                    <p>
+                        The usage of AND operator is showed below:<br>
+                        <span class="command-line-container">x && y</span> <br><br>
+
+                        When <span class="inline-cmd">&&</span> is used, the shell will first execute
+                        <span class="inline-cmd">x</span>, then check the exit status of running
+                        <span class="inline-cmd">x</span>. If the shell runs <span class="inline-cmd">x</span>
+                        successfully with exit status = 0, the shell will execute <span class="inline-cmd">y</span>.
+                        Otherwise, the shell will <b>NOT</b> execute <span class="inline-cmd">y</span>. <br><br>
+
+                        When <span class="inline-cmd">x</span> is executed successfully:<br>
+
+                        <span class="command-line-container">
+                            (pid=1234)/home/user$ echo hello && echo world<br>
+                            Command executed by pid=1235<br>
+                            hello<br>
+                            Command executed by pid=1236<br>
+                            world<br>
+                        </span> <br><br>
+
+                        When <span class="inline-cmd">x</span> is failed to be executed:<br>
+
+                        <span class="command-line-container">
+                            (pid=1234)/home/user$ cat abc.txt && echo hi<br>
+                            Command executed by pid=1235<br>
+                            cat: abc.txt: No such file or directory<br>
+                        </span> <br><br>
+                    </p>
+                </div>
+
+                <div class="project-info-section-sub">
+                    <h2>OR: <span class="inline-cmd">||</span></h2>
+                    <p>
+                        The usage of OR operator is showed below:<br>
+                        <span class="command-line-container">x || y</span> <br><br>
+
+                        When <span class="inline-cmd">||</span> is used, the shell will first execute
+                        <span class="inline-cmd">x</span>, then check the exit status of running
+                        <span class="inline-cmd">x</span>. If the shell runs <span class="inline-cmd">x</span>
+                        successfully with exit status = 0, the shell will <b>NOT</b> execute <span class="inline-cmd">y</span>.
+                        Otherwise, the shell will execute <span class="inline-cmd">y</span>. <br><br>
+
+                        When <span class="inline-cmd">x</span> is executed successfully:<br>
+
+                        <span class="command-line-container">
+                            (pid=1234)/home/user$ echo hello && echo world<br>
+                            Command executed by pid=1235<br>
+                            hello<br>
+                        </span> <br><br>
+
+                        When <span class="inline-cmd">x</span> is failed to be executed:<br>
+
+                        <span class="command-line-container">
+                            (pid=1234)/home/user$ cat abc.txt && echo hi<br>
+                            Command executed by pid=1235<br>
+                            cat: abc.txt: No such file or directory<br>
+                            Command executed by pid=1236<br>
+                            hi<br>
+                        </span> <br><br>
+                    </p>
+                </div>
+
+                <div class="project-info-section-sub">
+                    <h2>Separator: <span class="inline-cmd">;</span></h2>
+                    <p>
+                        The usage of Separator operator is showed below:<br>
+                        <span class="command-line-container">x; y</span> <br><br>
+
+                        When <span class="inline-cmd">;</span> is used, the shell will first execute
+                        <span class="inline-cmd">x</span>, then execute <span class="inline-cmd">y</span> regardless of
+                        exit status of running <span class="inline-cmd">x</span>. <br><br>
+
+                        When <span class="inline-cmd">x</span> is executed successfully:<br>
+
+                        <span class="command-line-container">
+                            (pid=1234)/home/user$ echo hello && echo world<br>
+                            Command executed by pid=1235<br>
+                            hello<br>
+                            Command executed by pid=1235<br>
+                            world<br>
+                        </span> <br><br>
+
+                        When <span class="inline-cmd">x</span> is failed to be executed:<br>
+
+                        <span class="command-line-container">
+                            (pid=1234)/home/user$ cat abc.txt && echo hi<br>
+                            Command executed by pid=1235<br>
+                            cat: abc.txt: No such file or directory<br>
+                            Command executed by pid=1236<br>
+                            hi<br>
+                        </span> <br><br>
+
+                        <span style="font-weight: 600; font-size: 22px; color: red;">WARNING(S):</span> <br><br>
+
+                        <span class="warning-sign"><i class="fas fa-exclamation-triangle"></i></span> The shell
+                        <b>ONLY</b> supports <i>at most one</i> logical operator for each user input.<br><br>
+
+                        <span class="warning-sign"><i class="fas fa-exclamation-triangle"></i></span> The shell does
+                        <b>NOT</b> support chaining logical operators with <span class="inline-cmd">!history</span>,
+                        <span class="inline-cmd">&lt;/n&gt;</span>, <span class="inline-cmd">!&lt;prefix&gt;</span> or
+                        <span class="inline-cmd">exit</span> .
+                    </p>
+                </div>
             </div>
             <div class="project-info-section" id="section-5">
                 <h1>Background Processes</h1>
+                <p>
+                    Any external commands suffixed with <span class="inline-cmd">&</span> will be run in the background
+                    processes. There should be a single space between the external command and
+                    <span class="inline-cmd">&</span>. An example of using background process will be: <br>
+
+                    <span class="command-line-container">ls &</span> <br><br>
+
+                    The shell will take the next command (built-in or external) before the previous given external
+                    commands finish running in the background processes. With that being said, the prompt might be
+                    misaligned as the example below:
+
+                    <span class="command-line-container">(pid=1234)/home/user$ ls &<br>
+                    Command executed by pid=1235<br>
+                    (pid=1234)/home/user$<br>
+                    example1.txt example2.txt shell<br>
+                    NEXT COMMAND WILL SHOW UP HERE WHEN YOU TYPE</span> <br><br>
+
+                    The shell was designed to run unlimited background processes at the same time, but this number is
+                    restricted by the system setting. Check out <span class="inline-cmd">ulimit</span> if you want to
+                    know more about resource limit of the current user. <br><br>
+
+                    <span style="font-weight: 600; font-size: 22px; color: red;">WARNING(S):</span> <br><br>
+
+                    <span class="warning-sign"><i class="fas fa-exclamation-triangle"></i></span> Only external commands
+                    can be run in the background process. <br><br>
+
+                    <span class="warning-sign"><i class="fas fa-exclamation-triangle"></i></span> Backgrounding will
+                    <b>NOT</b> chain with logical operators
+                </p>
             </div>
         </div>
     </div>

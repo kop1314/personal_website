@@ -4,17 +4,13 @@
     <list default="true" id="7604f766-1caa-4f74-8c4c-c1e5b3fbf904" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/project_template.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/project_template.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/projects.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/projects.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/project_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shell.html" beforeDir="false" afterPath="$PROJECT_DIR$/shell.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/test2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/veggiebirds.html" beforeDir="false" afterPath="$PROJECT_DIR$/veggiebirds.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../veggieplayers-master/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/css/css.html" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/css/css.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/css/mypost.css" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/css/mypost.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/load_all_my_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/load_all_my_post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/css/post.css" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/css/post.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/js/discussion.js" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/js/discussion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../veggieplayers-master/load_all_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/load_all_post.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +162,9 @@
       <workItem from="1621443783322" duration="39573000" />
       <workItem from="1622666778436" duration="35000" />
       <workItem from="1622753226481" duration="6181000" />
-      <workItem from="1622809407052" duration="3948000" />
+      <workItem from="1622809407052" duration="4194000" />
+      <workItem from="1622815128558" duration="5355000" />
+      <workItem from="1622840529783" duration="25315000" />
     </task>
     <servers />
   </component>

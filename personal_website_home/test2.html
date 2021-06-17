@@ -128,6 +128,12 @@
     font-weight: 900;
 
   }
+  video{
+    display: block;
+    width:100%;
+    height:100%;
+    object-fit: fill;
+  }
 
 </style>
 <body>
@@ -164,6 +170,13 @@
 </div>
 --->
 
+<div class="video-box" style="width: 200px;height:100px;">
+  <?php
+
+  >
+</div>
+
+
 <div class="grid">
   <span>I</span>
 </div>
@@ -172,6 +185,7 @@
 
 <script>
   $(document).ready(function(){
+    //updateVideo();
     FadeEvent();
     SwapEvent();
   });
@@ -194,6 +208,37 @@
     });
   }
 
+  function updateVideoHandler(){
+    var video = $("#video");
+    if(video == null){
+      console.log("it is null");
+    }
+    video.trigger('pause');
+    video.src='';
+    video.remove();
+
+    //load_all_posts();
+
+
+    //alert(postID);
+    var video_box = ".video-box";
+    var video = $('<video />', {
+      id: 'video',
+      src: 'video/in_fire.mp4',
+      type: 'video/mp4',
+      loop: true,
+      muted:true,
+      autoplay: true
+    });
+    $(video_box).prepend(video);
+  }
+
+  function updateVideo(){
+    console.log("start");
+    updateVideoHandler();
+    console.log("done");
+    //setTimeout(updateVideo, 5000);
+  }
 
 </script>
 

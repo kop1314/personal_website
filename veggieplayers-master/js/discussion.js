@@ -467,7 +467,9 @@ $(document).ready(function() {
 
     function updateAllPostHandler() {
         if($('.pagination_btn.active').attr("id") == "1" && noPostIsVisible() == true){
+            console.log("start fetch all posts");
             load_all_posts();
+            console.log("done fetch all posts");
             updateTrendPost();
         }
         setTimeout(updateAllPostHandler, 5000);
@@ -488,13 +490,22 @@ $(document).ready(function() {
                     //remove all videos
                     $(".post_display_btn").removeClass("post_display_btn_trend");
                     $(".post_display_btn").addClass("post_display_btn_normal");
+                    /*
                     var video = $("#video");
                     video.trigger('pause');
                     video.src='';
                     video.remove();
+
+                     */
+                    $("video").each(function() {
+                        $(this)[0].pause();
+                        $(this).hide();
+                    });
+
                 }else{
                     //set all post_display_btn to normal
                     //delete all background videos
+                    /*
                     $(".post_display_btn").removeClass("post_display_btn_trend");
                     $(".post_display_btn").addClass("post_display_btn_normal");
                     var video = $("#video");
@@ -518,7 +529,23 @@ $(document).ready(function() {
                     $(btnID).prepend(video);
                     $(btnID).find(".post_display_btn").removeClass("post_display_btn_normal");
                     $(btnID).find(".post_display_btn").addClass("post_display_btn_trend");
+                    */
+                    $(".post_display_btn").removeClass("post_display_btn_trend");
+                    $(".post_display_btn").addClass("post_display_btn_normal");
+                    $("video").each(function() {
+                        $(this)[0].pause();
+                        $(this).hide();
+                    });
+
+                    var postID = res;
+                    var btnID = "#post_display_btn_block_" + postID;
+
+                    $(btnID + " > video")[0].play();
+                    $(btnID + " > video").show();
+                    $(btnID).find(".post_display_btn").removeClass("post_display_btn_normal");
+                    $(btnID).find(".post_display_btn").addClass("post_display_btn_trend");
                 }
+
             },
             complete:function(data)
             {

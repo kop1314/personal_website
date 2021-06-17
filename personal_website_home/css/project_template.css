@@ -267,6 +267,11 @@ p{
     border-radius: 0 5px 5px 0;
 }
 
+.warning-sign{
+    background-color: red;
+    color: white;
+}
+
 
 @media(max-width: 1000px){
     *{
