@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <title>Shell</title>
     <link rel="stylesheet" type="text/css" href="css/project_template.css"/>
 
@@ -42,9 +44,9 @@
                 <ul>
                     <li><a href="#section-1" class="active">Overview</a></li>
                     <li><a href="#section-2">Run the Shell</a></li>
-                    <li><a href="#section-3">Commands</a></li>
-                    <li><a href="#section-4">Logical Operators</a></li>
-                    <li><a href="#section-5">Background Processes</a></li>
+                    <li><a href="#section-3">Background Processes</a></li>
+                    <li><a href="#section-4">Commands</a></li>
+                    <li><a href="#section-5">Logical Operators</a></li>
 
                 </ul>
 
@@ -66,7 +68,7 @@
                     <a href="https://en.wikipedia.org/wiki/Ar_(Unix)">archiver</a> which contains some callback
                     functions, the program can <b>ONLY</b> be built and run in a linux machine. The version for Windows
                     and macOS will be provided in the future once I replace the archiver with my owned code. To start
-                    playing with the shell, download it from <a href="#">here</a>.
+                    playing with the shell, download it from <a href="downloads/shell.zip">here</a>.
                 </p>
             </div>
             <div class="project-info-section" id="section-2">
@@ -152,10 +154,43 @@
 
             </div>
             <div class="project-info-section" id="section-3">
+                <h1>Background Processes</h1>
+                <p>
+                    Any external commands suffixed with <span class="inline-cmd">&</span> will be run in the background
+                    processes. There should be a single space between the external command and
+                    <span class="inline-cmd">&</span>. An example of using background process will be: <br>
+
+                    <span class="command-line-container">ls &</span> <br><br>
+
+                    The shell will take the next command (built-in or external) before the previous given external
+                    commands finish running in the background processes. With that being said, the prompt might be
+                    misaligned as the example below:
+
+                    <span class="command-line-container">(pid=1234)/home/user$ ls &<br>
+                    Command executed by pid=1235<br>
+                    (pid=1234)/home/user$<br>
+                    example1.txt example2.txt shell<br>
+                    NEXT COMMAND WILL SHOW UP HERE WHEN YOU TYPE</span> <br><br>
+
+                    The shell was designed to run unlimited background processes at the same time, but this number is
+                    restricted by the system setting. Check out <span class="inline-cmd">ulimit</span> if you want to
+                    know more about resource limit of the current user. <br><br>
+
+                    <span style="font-weight: 600; font-size: 22px; color: red;">WARNING(S):</span> <br><br>
+
+                    <span class="warning-sign"><i class="fas fa-exclamation-triangle"></i></span> Only external commands
+                    can be run in the background process. <br><br>
+
+                    <span class="warning-sign"><i class="fas fa-exclamation-triangle"></i></span> Backgrounding will
+                    <b>NOT</b> chain with logical operators
+                </p>
+            </div>
+            <div class="project-info-section" id="section-4">
                 <h1>Commands</h1>
 
                 <h2>Built-in Commands:</h2><br><br>
 
+                <!---- cd <path>-------->
                 <div class="project-info-section-sub">
                     <h2><span class="inline-cmd">cd &lt;path&gt;</span></h2>
                     <p>
@@ -180,6 +215,7 @@
                     </p>
                 </div>
 
+                <!---- !history -------->
                 <div class="project-info-section-sub">
                     <h2><span class="inline-cmd">!history</span></h2>
                     <p>
@@ -205,6 +241,7 @@
                     </p>
                 </div>
 
+                <!---- #<n> ------------>
                 <div class="project-info-section-sub">
                     <h2><span class="inline-cmd">#&lt;n&gt;</span></h2>
                     <p>
@@ -240,6 +277,7 @@
                     </p>
                 </div>
 
+                <!---- !<prefix> ------->
                 <div class="project-info-section-sub">
                     <h2><span class="inline-cmd">!&lt;prefix&gt;</span></h2>
                     <p>
@@ -273,6 +311,36 @@
                     </p>
                 </div>
 
+                <!-------- ps ---------->
+                <div class="project-info-section-sub">
+                    <h2><span class="inline-cmd">ps</span></h2>
+                    <p>
+                        This command prints out information of the process that is running shell and all its executing
+                        direct child processes. Note that this command is not the same as the old
+                        <span style="background: #c9c9c9">ps</span>. See the below example: <br><br>
+
+                        Assume  <span style="background: #c9c9c9">echo_hello_world</span> is a program that prints out
+                        "hello world" every 4 seconds.<br><br>
+
+                        <span class="command-line-container">
+                            (pid=1234)/home/user$ ps<br>
+                            Running 1234 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ./shell<br>
+                            (pid=1234)/home/user$ ./echo_hello_world &<br>
+                            Command executed by pid=1235<br>
+                            (pid=1234)/home/user$ hello world<br>
+                            hello world<br>
+                            hello world<br>
+                            //misalignment<br>
+                            stop 1235<br>
+                            1235 suspended &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ./echo_hello_world &<br>
+                            (pid=1234)/home/user$ ps<br>
+                            Running 1234 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ./shell<br>
+                            Stopped 1235 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ./echo_hello_world &<br>
+                        </span>
+                    </p>
+                </div>
+
+                <!---- exit ------------>
                 <div class="project-info-section-sub">
                     <h2><span class="inline-cmd">exit</span></h2>
                     <p>
@@ -286,29 +354,125 @@
                     </p>
                 </div>
 
+                <!---- kill <pid> ------>
                 <div class="project-info-section-sub">
                     <h2><span class="inline-cmd">kill &lt;pid&gt;</span></h2>
                     <p>
                         This command will terminate the direct child process with given
                         <span class="inline-cmd">&lt;pid&gt;</span>. Since the child process will not exist after the
-                        execution of this command, the child process will not be resumed.
+                        execution of this command, the child process will not be resumed. See the below example:<br><br>
+
+                        Assume  <span style="background: #c9c9c9">echo_hello_world</span> is a program that prints out
+                        "hello world" every 4 seconds and  the
+                        <span style="background: #c9c9c9">pgrep -R &lt;pid&gt;</span> command prints out pid(s) of all
+                        alive child processes of the process with given
+                        <span style="background: #c9c9c9">&lt;pid&gt;</span>. <br><br>
+
+                        <span class="command-line-container">
+                            (pid=1234)/home/user$ ./echo_hello_world &<br>
+                            Command executed by pid=1235<br>
+                            (pid=1234)/home/user$ hello world<br>
+                            hello world<br>
+                            hello world<br>
+                            //misalignment<br>
+                            pgrep -R 1234<br>
+                            Command executed by pid=1236<br>
+                            //pid of process that is running echo_hello_world<br>
+                            1235<br>
+                            (pid=1234)/home/user$ hello world<br>
+                            hello world<br>
+                            hello world<br>
+                            //misalignment<br>
+                            kill 1234<br>
+                            1234 killed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;./echo_hello_world &<br>
+                            (pid=1234)/home/user$ pgrep -R 1234<br>
+                            Command executed by pid=1237<br>
+                            //No pid will be printed here<br>
+                            (pid=1234)/home/user$<br>
+                        </span>
                     </p>
                 </div>
 
+                <!---- stop <pid> ------>
                 <div class="project-info-section-sub">
                     <h2><span class="inline-cmd">stop &lt;pid&gt;</span></h2>
                     <p>
                         This command will stop the running child process with given
                         <span class="inline-cmd">&lt;pid&gt;</span>. The child process can be resumed by using
-                        <span class="inline-cmd">cont &lt;pid&gt;</span>.
+                        <span class="inline-cmd">cont &lt;pid&gt;</span>. See the below example:<br><br>
+
+                        Assume  <span style="background: #c9c9c9">echo_hello_world</span> is a program that prints out
+                        "hello world" every 4 seconds and  the
+                        <span style="background: #c9c9c9">pgrep -R &lt;pid&gt;</span> command prints out pid(s) of all
+                        alive child processes of the process with given
+                        <span style="background: #c9c9c9">&lt;pid&gt;</span>. <br><br>
+
+                        <span class="command-line-container">
+                            (pid=1234)/home/user$ ./echo_hello_world &<br>
+                            Command executed by pid=1235<br>
+                            (pid=1234)/home/user$ hello world<br>
+                            hello world<br>
+                            hello world<br>
+                            //misalignment<br>
+                            pgrep -R 1234<br>
+                            Command executed by pid=1236<br>
+                            //pid of process that is running echo_hello_world<br>
+                            1235<br>
+                            (pid=1234)/home/user$ hello world<br>
+                            hello world<br>
+                            hello world<br>
+                            //misalignment<br>
+                            stop 1234<br>
+                            1234 suspended &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;./echo_hello_world &<br>
+                            (pid=1234)/home/user$ pgrep -R 1234<br>
+                            Command executed by pid=1237<br>
+                            //1234 is still printed here, but no more "hello world"(s)<br>
+                            1234<br>
+                            (pid=1234)/home/user$<br>
+                        </span>
                     </p>
                 </div>
 
+                <!---- cont <pid> ------>
                 <div class="project-info-section-sub">
                     <h2><span class="inline-cmd">cont &lt;pid&gt;</span></h2>
                     <p>
                         This command will resume the child process with given
-                        <span class="inline-cmd">&lt;pid&gt;</span>.
+                        <span class="inline-cmd">&lt;pid&gt;</span>. See the below example:<br><br>
+
+                        Assume  <span style="background: #c9c9c9">echo_hello_world</span> is a program that prints out
+                        "hello world" every 4 seconds and  the
+                        <span style="background: #c9c9c9">pgrep -R &lt;pid&gt;</span> command prints out pid(s) of all
+                        alive child processes of the process with given
+                        <span style="background: #c9c9c9">&lt;pid&gt;</span>. <br><br>
+
+                        <span class="command-line-container">
+                            (pid=1234)/home/user$ ./echo_hello_world &<br>
+                            Command executed by pid=1235<br>
+                            (pid=1234)/home/user$ hello world<br>
+                            hello world<br>
+                            hello world<br>
+                            //misalignment<br>
+                            pgrep -R 1234<br>
+                            Command executed by pid=1236<br>
+                            //pid of process that is running echo_hello_world<br>
+                            1235<br>
+                            (pid=1234)/home/user$ hello world<br>
+                            hello world<br>
+                            hello world<br>
+                            //misalignment<br>
+                            stop 1234<br>
+                            1234 suspended &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;./echo_hello_world &<br>
+                            (pid=1234)/home/user$ pgrep -R 1234<br>
+                            Command executed by pid=1237<br>
+                            //1234 is still printed here, but no more "hello world"(s)<br>
+                            1234<br>
+                            //resume the process and print "hello world"<br>
+                            (pid=1234)/home/user$ cont 1234<br>
+                            (pid=1234)/home/user$ hello world<br>
+                            hello world<br>
+                            hello world<br>
+                        </span>
                     </p>
                 </div>
 
@@ -326,7 +490,7 @@
                 </p>
 
             </div>
-            <div class="project-info-section" id="section-4">
+            <div class="project-info-section" id="section-5">
                 <h1>Logical Operators</h1>
                 <div class="project-info-section-sub">
                     <h2>AND: <span class="inline-cmd">&&</span></h2>
@@ -433,38 +597,6 @@
                         <span class="inline-cmd">exit</span> .
                     </p>
                 </div>
-            </div>
-            <div class="project-info-section" id="section-5">
-                <h1>Background Processes</h1>
-                <p>
-                    Any external commands suffixed with <span class="inline-cmd">&</span> will be run in the background
-                    processes. There should be a single space between the external command and
-                    <span class="inline-cmd">&</span>. An example of using background process will be: <br>
-
-                    <span class="command-line-container">ls &</span> <br><br>
-
-                    The shell will take the next command (built-in or external) before the previous given external
-                    commands finish running in the background processes. With that being said, the prompt might be
-                    misaligned as the example below:
-
-                    <span class="command-line-container">(pid=1234)/home/user$ ls &<br>
-                    Command executed by pid=1235<br>
-                    (pid=1234)/home/user$<br>
-                    example1.txt example2.txt shell<br>
-                    NEXT COMMAND WILL SHOW UP HERE WHEN YOU TYPE</span> <br><br>
-
-                    The shell was designed to run unlimited background processes at the same time, but this number is
-                    restricted by the system setting. Check out <span class="inline-cmd">ulimit</span> if you want to
-                    know more about resource limit of the current user. <br><br>
-
-                    <span style="font-weight: 600; font-size: 22px; color: red;">WARNING(S):</span> <br><br>
-
-                    <span class="warning-sign"><i class="fas fa-exclamation-triangle"></i></span> Only external commands
-                    can be run in the background process. <br><br>
-
-                    <span class="warning-sign"><i class="fas fa-exclamation-triangle"></i></span> Backgrounding will
-                    <b>NOT</b> chain with logical operators
-                </p>
             </div>
         </div>
     </div>

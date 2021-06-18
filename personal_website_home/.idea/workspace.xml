@@ -3,15 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7604f766-1caa-4f74-8c4c-c1e5b3fbf904" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/project_template.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/project_template.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Felix_Yang_Resume.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/downloads/Felix_Yang_Resume.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/projects.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/projects.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ichat.html" beforeDir="false" afterPath="$PROJECT_DIR$/ichat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/project_template.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/project_template.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shell.html" beforeDir="false" afterPath="$PROJECT_DIR$/shell.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/test2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/css/post.css" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/css/post.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/js/discussion.js" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/js/discussion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/load_all_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/load_all_post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/veggiebirds.html" beforeDir="false" afterPath="$PROJECT_DIR$/veggiebirds.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,11 +77,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/downloads" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/images/ichat" />
       <recent name="$PROJECT_DIR$/images/veggiebirds_images" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/video" />
-      <recent name="$PROJECT_DIR$/css" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.veggiebirds.html">
@@ -164,7 +162,7 @@
       <workItem from="1622753226481" duration="6181000" />
       <workItem from="1622809407052" duration="4194000" />
       <workItem from="1622815128558" duration="5355000" />
-      <workItem from="1622840529783" duration="25315000" />
+      <workItem from="1622840529783" duration="34605000" />
     </task>
     <servers />
   </component>

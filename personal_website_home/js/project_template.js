@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    //scroll to top when refresh page
+    $(window).on('beforeunload', function(){
+        $(window).scrollTop(0);
+    });
+
     $(window).scroll(function(){
         highlightVerticalNavItem();
     });
