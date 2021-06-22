@@ -170,75 +170,16 @@
 </div>
 --->
 
-<div class="video-box" style="width: 200px;height:100px;">
-  <?php
-
-  >
-</div>
-
-
 <div class="grid">
-  <span>I</span>
+  <div class="leader-board-container">
+    <tr></tr>
+  </div>
 </div>
 
 <script data-require="jquery" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script>
-  $(document).ready(function(){
-    //updateVideo();
-    FadeEvent();
-    SwapEvent();
-  });
 
-  function FadeEvent(){
-    $('.container').on('click', '.btn_fade', function(e){
-      e.preventDefault();
-      $(".box-set-1").fadeOut(1000, function(){
-        $(".box-set-2").fadeIn(1000);
-      });
-    });
-  }
-
-  function SwapEvent(){
-    $('.container').on('click', '.btn_swap', function(e){
-      e.preventDefault();
-      $(".box-set-1").fadeOut(1000, function(){
-        $(".box-set-2").fadeIn(1000);
-      });
-    });
-  }
-
-  function updateVideoHandler(){
-    var video = $("#video");
-    if(video == null){
-      console.log("it is null");
-    }
-    video.trigger('pause');
-    video.src='';
-    video.remove();
-
-    //load_all_posts();
-
-
-    //alert(postID);
-    var video_box = ".video-box";
-    var video = $('<video />', {
-      id: 'video',
-      src: 'video/in_fire.mp4',
-      type: 'video/mp4',
-      loop: true,
-      muted:true,
-      autoplay: true
-    });
-    $(video_box).prepend(video);
-  }
-
-  function updateVideo(){
-    console.log("start");
-    updateVideoHandler();
-    console.log("done");
-    //setTimeout(updateVideo, 5000);
-  }
 
 </script>
 

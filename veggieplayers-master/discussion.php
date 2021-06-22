@@ -96,6 +96,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     <div class="tabcontent_container">
         <div id="Posts" class="tabcontent">
+            <!---Reserve for ranking board---->
+            <!----
+            <div class="rank-board-container">
+                <div class="rank-board-row" id="rank-board-row-1">
+                    <video autoplay muted loop>
+                        <source src= "video/in_fire.webm" type="video/webm">
+                        <source src= "video/in_fire.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="rank-board-row" id="rank-board-row-2">
+                    <video autoplay muted loop>
+                        <source src= "video/in_fire.webm" type="video/webm">
+                        <source src= "video/in_fire.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="rank-board-row" id="rank-board-row-3">
+                </div>
+            </div>
+            ---->
             <div class="all_post_form">
             </div>
         </div>

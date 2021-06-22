@@ -43,10 +43,8 @@ if($result = $mysqli -> query($load_all_post_query)){
                 //old posts
                 echo '<div class="post_display_btn_block" id="post_display_btn_block_'.$row["postID"].'">';
             }
-            /*
-             *
-             */
-            echo '<video muted loop style="display: none;">';
+
+            echo '<video autoplay muted loop style="display: none;">';
             echo '<source src= "video/in_fire.webm" type="video/webm">';
             echo '<source src= "video/in_fire.mp4" type="video/mp4">';
             echo "Your browser does not support the video tag.";
