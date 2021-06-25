@@ -3,29 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7604f766-1caa-4f74-8c4c-c1e5b3fbf904" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ichat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ichat/chatpage.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/androidApp/androidPage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ichat/chatroom.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/androidApp/androidRoom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ichat/click_toggle.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/androidApp/click_toggle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ichat/login_example.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/androidApp/login_example.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ichat/registration_example.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/androidApp/registration_example.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ichat/search_friend.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/androidApp/search_friend.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/veggiebirds_images/mypost_form.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/veggiebirds_images/mypost_form.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/veggiebirds_images/on_fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/veggiebirds_images/on_fire.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/veggiebirds_images/post_form.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/veggiebirds_images/post_form.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/veggiebirds_images/posts_section.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/veggiebirds_images/posts_section.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/veggiebirds_images/signup_form.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/veggiebirds_images/signup_form.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/veggiebirds_images/veggiebirds_discussion.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/veggiebirds_images/veggiebirds_discussion.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/yasuo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/test2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../veggieplayers-master/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/css/discussion.css" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/css/discussion.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/css/image/proj_yasuo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/css/post.css" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/css/post.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/discussion.php" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/discussion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/js/discussion.js" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/js/discussion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/load_all_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/load_all_post.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +157,7 @@
       <workItem from="1622809407052" duration="4194000" />
       <workItem from="1622815128558" duration="5355000" />
       <workItem from="1622840529783" duration="34605000" />
-      <workItem from="1624066701666" duration="3188000" />
+      <workItem from="1624066701666" duration="3757000" />
     </task>
     <servers />
   </component>
