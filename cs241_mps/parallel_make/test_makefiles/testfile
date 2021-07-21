@@ -1,0 +1,7 @@
+examples/file1: examples/file2
+		       echo "hi"
+examples/file2:
+	
+reset:
+	touch examples/file2 -d "01/01/2012"
+	echo "Test case reset!"

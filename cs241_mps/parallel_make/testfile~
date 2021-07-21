@@ -1,0 +1,8 @@
+d: a c
+   echo D
+a: b
+   echo A
+b:  #a (comment out 'a': no more cycles if you remove this edge!)
+   echo B
+c:
+   echo C
