@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "61889068200",
+    "firebase_url": "https://chat-3d76d.firebaseio.com",
+    "project_id": "chat-3d76d",
+    "storage_bucket": "chat-3d76d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61889068200:android:d3c190f37d1163ae",
+        "android_client_info": {
+          "package_name": "edu.illinois.finalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61889068200-tjhgj4d4jl7d2cct7utio01hb56b678n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.illinois.finalproject",
+            "certificate_hash": "73af826fa866448ac523cc2f2b674b48cc52aca5"
+          }
+        },
+        {
+          "client_id": "61889068200-si4aauc3983ffe3ocacnuc9sfu774ob0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjp7S_4CHTozSjb87YAswdlUK3FUtspNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61889068200-si4aauc3983ffe3ocacnuc9sfu774ob0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

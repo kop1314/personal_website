@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange"
+    android:gravity="bottom"
+    android:layout_weight="10"
+    android:orientation="horizontal">
+
+    <hani.momanii.supernova_emoji_library.Helper.EmojiconEditText
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="#CFD8DC"
+        android:textColor="#CFD8DC"
+        android:hint="Write a message..."
+        android:id="@+id/messageArea"
+        android:maxHeight="80dp"
+        android:layout_weight="8"
+        app:emojiconSize="28sp"
+        />
+
+    <ImageView
+        android:id="@+id/emojiconButton"
+        android:src="@drawable/ic_insert_emoticon_black_24dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:padding="4dp" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="4dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_file_upload_black_24dp"
+        android:id="@+id/sendButton"/>
+</LinearLayout>

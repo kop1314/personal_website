@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.illinois.finalproject.AddFriendActivity">
+
+    <LinearLayout
+        android:id="@+id/add_actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_set"
+        android:orientation="horizontal"
+        android:weightSum="10">
+        <SearchView
+            android:id="@+id/add_searchView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            android:queryHint="search..."
+            android:layout_weight="6">
+            <requestFocus />
+        </SearchView>
+
+        <Button
+            android:id="@+id/add_cancelBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Cancel"
+            android:textColor="@color/orange"
+            android:layout_weight="4"
+            android:background="?android:attr/selectableItemBackground">
+        </Button>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/add_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/add_actionBar" />
+
+</RelativeLayout>

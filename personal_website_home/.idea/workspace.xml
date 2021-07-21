@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7604f766-1caa-4f74-8c4c-c1e5b3fbf904" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/Felix_Yang_Resume.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/downloads/Felix_Yang_Resume.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../veggieplayers-master/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/css/post.css" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/css/post.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../veggieplayers-master/load_all_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/../veggieplayers-master/load_all_post.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,11 +77,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/downloads" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/images/ichat" />
       <recent name="$PROJECT_DIR$/images/veggiebirds_images" />
-      <recent name="$PROJECT_DIR$/video" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.veggiebirds.html">
@@ -158,6 +164,8 @@
       <workItem from="1622815128558" duration="5355000" />
       <workItem from="1622840529783" duration="34605000" />
       <workItem from="1624066701666" duration="3757000" />
+      <workItem from="1624918576968" duration="4841000" />
+      <workItem from="1625874017419" duration="289000" />
     </task>
     <servers />
   </component>

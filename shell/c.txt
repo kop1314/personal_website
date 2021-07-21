@@ -1,0 +1,12 @@
+cd .. && cd ..
+cd zy15
+cd shell
+echo hellp
+echo hi
+ps
+sleep 2
+sleep 5&
+ps
+echo hi
+echo hello && echo word
+ls

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chatlist_rootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.illinois.finalproject.ChatListActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/chat_list_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/orange">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IChat"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_list_recyclerview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/chat_list_toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/chatlist_buttonBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        style="@android:style/ButtonBar">
+
+        <Button
+            android:id="@+id/chatlist_chatroomListBTN"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_chat_orange_24dp"
+            android:text="Chat"
+            android:textColor="@color/orange"
+            android:background="?android:attr/selectableItemBackground"
+            />
+
+        <Button
+            android:id="@+id/chatlist_profileBTN"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="ME"
+            android:drawableTop="@drawable/ic_person_black_24dp"
+            android:background="?android:attr/selectableItemBackground"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

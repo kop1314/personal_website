@@ -1,0 +1,1 @@
+echo CS241 sucks
